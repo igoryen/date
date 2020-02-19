@@ -22,6 +22,11 @@ export default {
             // so that the < and > buttons in the browser will work
             // because the old route will be saved as well
         }
+    },
+    watch: {
+        '$route'(to /*, from*/) {
+            this.id = to.params.id;
+        }
     }
 };
 </script>
