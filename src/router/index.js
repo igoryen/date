@@ -53,6 +53,10 @@ const routes = [
         redirect: {
             name: 'Home'
         }
+    },
+    {
+        path: '*',
+        redirect: '/'
     }
 ]
 
