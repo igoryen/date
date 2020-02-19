@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>The User Page</h1>
+        <p>Loaded user's ID: <span class="loaded-id">{{ id }}</span></p>
         <hr />
         <button @click="navigateToHome">Go Home</button>
     </div>
@@ -8,6 +9,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            id: this.$route.params.id
+        }
+    },
     methods: {
         navigateToHome() {
             this.$router.push('/');
@@ -19,3 +25,9 @@ export default {
     }
 };
 </script>
+<style>
+    .loaded-id {
+        background-color: blanchedalmond;
+        padding: 0 2px;
+    }
+</style>
