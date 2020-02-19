@@ -11,7 +11,7 @@
 export default {
     methods: {
         navigateToHome() {
-            this.$router.push("/");
+            this.$router.push({ name: "home" });
             // $router is provided by the router package.
             // .push() as in 'push this route on the stack of existing routes
             // so that the < and > buttons in the browser will work
