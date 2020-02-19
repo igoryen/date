@@ -50,7 +50,9 @@ const routes = [
     },
     {
         path: '/redirect-me',
-        redirect: '/user'
+        redirect: {
+            name: 'Home'
+        }
     }
 ]
 
