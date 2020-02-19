@@ -47,6 +47,10 @@ const routes = [
                 name: 'userEdit'
             },
         ]
+    },
+    {
+        path: '/redirect-me',
+        redirect: '/user'
     }
 ]
 
