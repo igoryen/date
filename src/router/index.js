@@ -29,7 +29,7 @@ const routes = [
         name: 'User',
         components: {
             default: () => import('../components/user/User.vue'),
-            'header-bottom': () => import('../components/Header.vue')
+            'header-top': () => import('../components/Header.vue')
         },
         children: [
             {

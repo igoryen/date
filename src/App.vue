@@ -31,32 +31,27 @@
 }
 
 .slide-leave-active {
-    animation: slide-out 1s ease-out forwards;
-    opacity: 0;
-    transition: opacity 1s ease;
+    animation: slide-out 0.2s ease-out forwards;
 }
-.slide-leave {
-    opacity: 1;
-    transform: translateX(0);
-}
+.slide-leave {}
 .slide-enter-active {
-    animation: slide-in 1s ease-out forwards;
+    animation: slide-in 0.2s ease-out forwards;
 }
 
 @keyframes slide-out {
     0% {
-        transform: translateY(0);
+        opacity: 1;
     }
     100% {
-        transform: translateY(-30px);
+        opacity: 0;
     }
 }
 @keyframes slide-in {
     0% {
-        transform: translateY(-30px);
+        opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        opacity: 1;
     }
 }
 </style>
