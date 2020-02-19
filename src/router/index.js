@@ -8,7 +8,10 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: Home
+        components: {
+            default: Home,
+            'header-top': () => import('../components/Header.vue')
+        }
     },
     {
         path: '/about',
@@ -16,12 +19,18 @@ const routes = [
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        components: {
+            default: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
     },
     {
         path: '/user',
         name: 'User',
-        component: () => import('../components/user/User.vue'),
+        components: {
+            default: () => import('../components/user/User.vue'),
+            'header-bottom': () => import('../components/Header.vue')
+        },
         children: [
             {
                 path: '',

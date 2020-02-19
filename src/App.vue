@@ -1,17 +1,11 @@
 <template>
     <div id="app">
-        <Header/>
+        <router-view name="header-top"/>
         <router-view />
+        <router-view name="header-bottom"/>
     </div>
 </template>
-<script>
-import Header from '@/components/Header'
-export default {
-    components: {
-        Header
-    }
-}
-</script>
+
 <style>
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
