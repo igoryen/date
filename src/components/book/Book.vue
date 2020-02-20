@@ -11,10 +11,14 @@
                     v-bind:name1="name2"
                     @nameGotReset="name2 = $event"
                     v-bind:resetFunc="resetName"
+                    :pRelDate="age2"
                 ></app-book-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <app-book-edit></app-book-edit>
+                <app-book-edit
+                    :pRelDate="age2"
+                    @relDateGotEdited="age2 = $event"
+                ></app-book-edit>
             </div>
         </div>
     </div>
@@ -28,8 +32,7 @@
         data() {
             return {
                 name2: 'Math',
-                // flare: false
-                    // 'class-a': true,
+                age2: 1991,
                 isFlare: false
             };
         },
