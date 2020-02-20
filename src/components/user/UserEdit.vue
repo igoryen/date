@@ -5,11 +5,33 @@
         <p>Locale: {{ $route.query.locale }} </p>
         <p>Query: {{ $route.query.q }} </p>
         <hr>
-        <button>Confirm</button>
+        <button @click="confirmed = true">Confirm</button>
         <div class="abc"></div>
         <p id="data">Some extra data</p>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            confirmed: false
+        }
+    },
+    beforeRouteLeave( to, from, next ) {
+        if ( this.confirmed ) {
+            next();
+        }
+        else {
+            if (confirm('Discard unfinished edits and leave?')) {
+                next();
+            }
+            else {
+                next( false );
+            }
+        }
+    }
+}
+</script>
 <style>
     .abc {
         background-color: bisque;
