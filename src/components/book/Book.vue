@@ -2,6 +2,7 @@
     <div class="component book">
         <h1>The Book Component</h1>
         <p>I'm an awesome Book!</p>
+        <button @click="changeName">Change my name</button>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -19,6 +20,16 @@
     import BookEdit from './BookEdit.vue';
 
     export default {
+        data() {
+            return {
+                name: 'Math'
+            };
+        },
+        methods: {
+            changeName() {
+                this.name = 'Physics'
+            }
+        },
         components: {
             appBookDetail: BookDetail,
             appBookEdit: BookEdit

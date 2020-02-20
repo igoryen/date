@@ -2,10 +2,14 @@
     <div class="component deet">
         <h3>You may view the Book Details here</h3>
         <p>Many Details</p>
+        <p>Book name: {{  }}</p>
     </div>
 </template>
 
 <script>
+    export default {
+        
+    }
 </script>
 
 <style lang="scss" scoped>
