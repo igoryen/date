@@ -6,7 +6,7 @@
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <app-book-detail></app-book-detail>
+                <app-book-detail v-bind:name1="name2"></app-book-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <app-book-edit></app-book-edit>
@@ -22,12 +22,12 @@
     export default {
         data() {
             return {
-                name: 'Math'
+                name2: 'Math'
             };
         },
         methods: {
             changeName() {
-                this.name = 'Physics'
+                this.name2 = 'Physics'
             }
         },
         components: {

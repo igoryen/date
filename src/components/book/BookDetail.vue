@@ -2,13 +2,13 @@
     <div class="component deet">
         <h3>You may view the Book Details here</h3>
         <p>Many Details</p>
-        <p>Book name: {{  }}</p>
+        <p>Book name: {{ name1 }}</p>
     </div>
 </template>
 
 <script>
     export default {
-        
+        props: ['name1']
     }
 </script>
 
