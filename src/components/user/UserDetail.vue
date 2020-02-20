@@ -27,10 +27,17 @@ export default {
     // similar to a life-cycle hook
     // eslint-disable-next-line no-unused-vars
     beforeRouteEnter( to, from, next ) {
+        // eslint-disable-next-line no-constant-condition
+        if ( true ) { // e.g. the user is authenticated
+            next();
+        }
+        else {
+            next( false ); // abort
+        }
         // this.link // data access fails
-        next( vm => { // next() - the permission to load/create this file/component
-            vm.link; // data access works (a callback)
-        }); 
+        // next( vm => { // next() - the permission to load/create this file/component
+        //     vm.link; // data access works (a callback)
+        // });
     }
 
 }
