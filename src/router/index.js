@@ -62,7 +62,22 @@ const routes = [
 
 const router = new VueRouter({
     routes,
-    mode: 'history'
+    mode: 'history',
+    scrollBehavior(to /*, from*/, savedPosition) {
+        // savedPosition = the position the user scrolled down to, which the browser has saved.
+        if ( savedPosition ) { 
+            return savedPosition;
+        }
+        if (to.hash) {
+            return {
+                selector: to.hash
+            }
+        }
+        return {
+            x: 0,
+            y: 0
+        }
+    }
 })
 
 export default router

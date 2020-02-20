@@ -1,6 +1,7 @@
 <template>
     <div>
         <h3>Some User Details</h3>
+        <pre>UseDetail.vue</pre>
         <p>The loaded user's ID: {{ $route.params.id }}</p>
         <router-link
             tag="button"
