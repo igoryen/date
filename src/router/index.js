@@ -54,6 +54,14 @@ const routes = [
         ]
     },
     {
+        path: '/book',
+        name: 'Book',
+        components: {
+            default: () => import('../components/book/Book.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
         path: '/redirect-me',
         redirect: {
             name: 'Home'
