@@ -23,6 +23,15 @@ export default {
                 hash: '#data'
             }
         }
+    },
+    // similar to a life-cycle hook
+    // eslint-disable-next-line no-unused-vars
+    beforeRouteEnter( to, from, next ) {
+        // this.link // data access fails
+        next( vm => { // next() - the permission to load/create this file/component
+            vm.link; // data access works (a callback)
+        }); 
     }
+
 }
 </script>
