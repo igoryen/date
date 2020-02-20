@@ -20,18 +20,3 @@ export default {
     }
 };
 </script>
-<style>
-ul.list-group {
-    border: 1px solid #f2f2f2;
-    padding: 0;
-}
-ul.list-group li {
-    border: 1px solid lightblue;
-    border-radius: 3px;
-    list-style: none;
-    margin: 2PX;
-}
-ul.list-group li:hover {
-    background-color: antiquewhite;
-}
-</style>

@@ -9,3 +9,20 @@
         </ul>
     </div>
 </template>
+<style lang="scss" scoped>
+ul {
+    &.list-group {
+        border: 1px solid #f2f2f2;
+        padding: 0;
+        li {
+            border: 1px solid lightblue;
+            border-radius: 3px;
+            list-style: none;
+            margin: 2px;
+            &:hover {
+                background-color: antiquewhite;
+            }
+        }
+    }
+}
+</style>
