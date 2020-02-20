@@ -10,6 +10,7 @@
                 <app-book-detail
                     v-bind:name1="name2"
                     @nameGotReset="name2 = $event"
+                    v-bind:resetFunc="resetName"
                 ></app-book-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
@@ -39,6 +40,9 @@
                 setTimeout(() => {
                     this.isFlare = false
                 }, 1000)
+            },
+            resetName() {
+                this.name2 = 'Math'
             }
         },
         components: {
