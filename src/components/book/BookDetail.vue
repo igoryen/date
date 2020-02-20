@@ -12,6 +12,7 @@
 </template>
 
 <script>
+    import { eventBus } from '../../main.js'
     export default {
         data() {
             return {
@@ -39,6 +40,13 @@
                     this.isFlare = false
                 }, 1000)
             }
+        },
+        created() { // es6 syntax. es5 is: created: function(){...}
+            // create a listener that will run all from when the component is created.
+            // To listen to events that are emitted:
+            eventBus.$on('relDateGotEdited', ( data_relDate) => {
+                this.pRelDate = data_relDate;
+            });
         }
     }
 </script>

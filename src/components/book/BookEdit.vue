@@ -8,12 +8,14 @@
 </template>
 
 <script>
+import { eventBus } from '../../main.js'
 export default {
     props: ['pRelDate'],
     methods: {
         editAge() {
             this.pRelDate = 1801;
-            this.$emit('relDateGotEdited', this.pRelDate)
+            eventBus.$emit('relDateGotEdited', this.pRelDate);
+            // this.$emit('relDateGotEdited', this.pRelDate) // replaced by eventBus
         }
     }
 }

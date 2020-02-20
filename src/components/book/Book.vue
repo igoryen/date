@@ -4,6 +4,7 @@
         <p>I'm an awesome Book!</p>
         <button @click="changeName">Change my name</button>
         <p>Name is: <span class="flash" v-bind:class="{ 'flare': isFlare}">{{ name2 }}</span></p>
+        <p>Released: {{ age2 }}</p>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
