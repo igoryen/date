@@ -9,7 +9,12 @@
 <script>
     export default {
         props: {
-            name1: String // prop type. Also possible: [String, Array]
+            name1: {
+                type: String,
+                // required: true, // this prop is required for the component to be used.
+                default: 'Math' // 'default' and 'required' are mutually exclusive
+            }
+            // name1: String // prop type. Also possible: [String, Array]
         },
         methods: {
             switchName() {
