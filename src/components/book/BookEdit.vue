@@ -14,7 +14,8 @@ export default {
     methods: {
         editAge() {
             this.pRelDate = 1801;
-            eventBus.$emit('relDateGotEdited', this.pRelDate);
+            eventBus.changeRelYear( this.pRelDate );
+            // eventBus.$emit('relDateGotEdited', this.pRelDate);
             // this.$emit('relDateGotEdited', this.pRelDate) // replaced by eventBus
         }
     }
