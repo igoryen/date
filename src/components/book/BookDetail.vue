@@ -3,6 +3,7 @@
         <h3>You may view the Book Details here</h3>
         <p>Many Details</p>
         <p>Book name: {{ switchName() }}</p>
+        <button @click="resetName()">Reset the name</button>
     </div>
 </template>
 
@@ -19,6 +20,10 @@
         methods: {
             switchName() {
                 return this.name1.split("").reverse().join("");
+            },
+            resetName() {
+                this.name1 = 'Max';
+                this.$emit('nameGotReset', this.name1);
             }
         }
     }
