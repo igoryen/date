@@ -2,13 +2,18 @@
     <div class="component deet">
         <h3>You may view the Book Details here</h3>
         <p>Many Details</p>
-        <p>Book name: {{ switchName() }}</p>
+        <p>Book name: <span v-bind:class="{ 'flare': isFlare}">{{ switchName() }}</span></p>
         <button @click="resetName()">Reset the name</button>
     </div>
 </template>
 
 <script>
     export default {
+        data() {
+            return {
+                isFlare: false
+            }
+        },
         props: {
             name1: {
                 type: String,
@@ -24,6 +29,10 @@
             resetName() {
                 this.name1 = 'Max';
                 this.$emit('nameGotReset', this.name1);
+                this.isFlare = true,
+                setTimeout(() => {
+                    this.isFlare = false
+                }, 1000)
             }
         }
     }
