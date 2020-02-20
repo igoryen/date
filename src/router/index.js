@@ -39,7 +39,12 @@ const routes = [
             },
             {
                 path: ':id',
-                component: () => import('../components/user/UserDetail.vue')
+                component: () => import('../components/user/UserDetail.vue'),
+                // eslint-disable-next-line no-unused-vars
+                beforeEnter: (to, from, next) => {
+                    console.log('inside route setup!!');
+                    next();
+                }
             },
             {
                 path: ':id/edit',
