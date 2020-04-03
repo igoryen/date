@@ -17,4 +17,7 @@ export default {
     padding: 30px;
     text-align: center;
 }
+h2 {
+    color: red;
+}
 </style>
