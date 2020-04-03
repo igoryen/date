@@ -4,6 +4,9 @@
         <app-quote>
             <h2 slot="a">{{ quoteTitle }}</h2>
             <p  slot="b">Carpe diem!</p>
+            <p>
+                <slot name="c">autnor not specified</slot>
+            </p>
         </app-quote>
         <router-view />
         <hr />
