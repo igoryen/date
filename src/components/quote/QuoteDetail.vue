@@ -1,12 +1,14 @@
 <template>
     <div class="aaa">
         <div class="aba">
-            <p>A wonderful quote!</p>
+            <p>{{ quote }}</p>
         </div>
     </div>
 </template>
 <script>
-export default {};
+export default {
+    props: ['quote']
+};
 </script>
 <style lang="scss" scoped>
 .aba {

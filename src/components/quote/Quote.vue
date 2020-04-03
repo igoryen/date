@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>The Quote Page</h1>
-        <app-quote></app-quote>
+        <app-quote quote="A wonderful quote!!!"></app-quote>
         <router-view />
 
         <hr />
