@@ -70,6 +70,24 @@ const routes = [
     {
         path: '*',
         redirect: '/'
+    },
+    {
+        path: '/quote',
+        name: 'Quote',
+        components: {
+            default: () => import('../components/quote/Quote.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
+        path: '/redirect-me',
+        redirect: {
+            name: 'Home'
+        }
+    },
+    {
+        path: '*',
+        redirect: '/'
     }
 ]
 
