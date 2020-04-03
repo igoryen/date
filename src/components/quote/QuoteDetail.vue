@@ -1,19 +1,25 @@
 <template>
-    <div class="aaa">
-        <slot></slot>
+    <div>
+        <div class="aaa">
+            <slot name="a"></slot>
+        </div>
+        <div class="aaa">
+            <slot name="b"></slot>
+        </div>
     </div>
+    
 </template>
 <script>
-export default {
-};
+export default {};
 </script>
 <style lang="scss" scoped>
-.aba {
+
+.aaa {
     background-color: aqua;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
     margin: 30px auto;
-    max-width: 300px;;
+    max-width: 300px;
     padding: 30px;
     text-align: center;
 }

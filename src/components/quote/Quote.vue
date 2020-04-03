@@ -2,10 +2,8 @@
     <div>
         <h1>The Quote Page</h1>
         <app-quote>
-            <div class="aba">
-                <h2>{{ quoteTitle }}</h2>
-                <p>My quote!</p>
-            </div>
+            <h2 slot="a">{{ quoteTitle }}</h2>
+            <p  slot="b">Carpe diem!</p>
         </app-quote>
         <router-view />
         <hr />
