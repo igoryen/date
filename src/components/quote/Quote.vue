@@ -1,13 +1,8 @@
 <template>
     <div>
         <h1>The Quote Page</h1>
+        <app-quote></app-quote>
         <router-view />
-
-        <div class="aaa">
-            <div class="aba">
-                <p>A wonderful quote!</p>
-            </div>
-        </div>
 
         <hr />
         <button @click="navigateToHome">Go Home</button>
@@ -15,21 +10,18 @@
 </template>
 
 <script>
+import QuoteDetail from "./QuoteDetail.vue";
 export default {
     methods: {
         navigateToHome() {
             this.$router.push({ name: "Home" });
         }
+    },
+    components: {
+        appQuote: QuoteDetail
     }
 };
 </script>
 
 <style lang="scss" scoped>
-.aba {
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 30px;
-    margin: 30px auto;
-    text-align: center;
-}
 </style>
