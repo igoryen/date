@@ -13,7 +13,13 @@ export default {
         };
     },
     destroyed() {
-        console.log('Destroyed!')
+        console.log('QuoteNew is Destroyed!')
+    },
+    deactivated() {
+        console.log('QuoteNew is Deactivated!')
+    },
+    activated() {
+        console.log('QuoteNew is Activated!')
     }
 }
 </script>
