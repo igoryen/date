@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="aaa">
-            <slot name="a"></slot>
+            <slot name="a">slot a</slot>
         </div>
         <div class="aaa">
-            <slot name="b"></slot>
+            <slot name="b">slot b</slot>
         </div>
         <div class="aaa author">
             <!-- no name = default -->

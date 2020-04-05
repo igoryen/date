@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>The Quote Page</h1>
+        <hr>
         <button @click="selectedComponent = 'appQuote'">Quote</button>
         <button @click="selectedComponent = 'appAuthor'">Quote author</button>
         <button @click="selectedComponent = 'appNew'">New quote</button>
@@ -31,6 +32,11 @@ import QuoteNew from "./QuoteNew.vue";
 export default {
     data: function() {
         return {
+            quotes: [
+                'Carpe diem!'
+            ],
+            maxQuotes: 10,
+            //-----------------------------
             quoteTitle: "My quote today",
             selectedComponent: "appQuote"
         };
