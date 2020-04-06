@@ -3,6 +3,7 @@
         <h1>The Quote Page</h1>
         <hr>
         <div class="q-01">
+            <app-header :qwtCount="qwts.length" :maxQwts="maxQwts"></app-header>
             <app-new-qwt @quoteAdded="newQwt"></app-new-qwt>
             <app-quote-grid :qwts="qwts" @qwtDeleted="deleteQwt"></app-quote-grid>
             <div class="q-info">
@@ -36,6 +37,7 @@
 
 import QuoteGrid from "./QuoteGrid.vue";
 import NewQwt from "./NewQwt.vue";
+import QwtHeader from "./QwtHeader.vue";
 
 //--------
 import QuoteDetail from "./QuoteDetail.vue";
@@ -56,7 +58,12 @@ export default {
     },
     methods: {
         newQwt( qwt ) {
-            this.qwts.push(qwt)
+            if(this.qwts.length < this.maxQwts) {
+                this.qwts.push(qwt);
+            }
+            else {
+                alert('Please delete quotes first');
+            }
         },
         deleteQwt( index ) {
             this.qwts.splice(index, 1);
@@ -69,6 +76,7 @@ export default {
     components: {
         appQuoteGrid: QuoteGrid,
         appNewQwt: NewQwt,
+        appHeader: QwtHeader,
         //-------------
         appQuote: QuoteDetail,
         appAuthor: QuoteAuthor,
