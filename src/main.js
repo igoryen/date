@@ -11,6 +11,12 @@ export const eventBus = new Vue({
   }
 });
 
+Vue.directive('highlight', {
+  bind( el /*, binding, vnode*/ ) {
+    el.style.backgroundColor = 'azure';
+  }
+});
+
 new Vue({
   router,
   render: h => h(App)
