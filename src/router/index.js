@@ -62,6 +62,14 @@ const routes = [
         }
     },
     {
+        path: '/directives',
+        name: 'Directives',
+        components: {
+            default: () => import('../components/directives/Directives.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
         path: '/redirect-me',
         redirect: {
             name: 'Home'
