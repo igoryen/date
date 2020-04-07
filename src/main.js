@@ -12,8 +12,8 @@ export const eventBus = new Vue({
 });
 
 Vue.directive('highlight', {
-    bind(el /*, binding, vnode*/) {
-        el.style.backgroundColor = 'azure';
+    bind(el, binding /*, vnode*/) {
+        el.style.backgroundColor = binding.value;
     }
 });
 

@@ -4,7 +4,7 @@
         <div>
             <h2>Custom directives</h2>
             <div class="dir-examples">
-                <p v-highlight>Color this</p>
+                <p v-highlight="'#ccc'">Color this</p>
             </div>
         </div>
         <div>
