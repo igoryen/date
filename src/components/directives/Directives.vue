@@ -6,6 +6,7 @@
             <div class="dir-examples">
                 <p v-highlight:background="'#ccc'">Color this</p>
                 <p v-highlight:background.delayed="'pink'">Colored with delay</p>
+                <p v-local-highlight:background.delayed="'orange'">Local custom directive</p>
             </div>
         </div>
         <div>
@@ -19,12 +20,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+    directives: {
+        "local-highlight": {
+            bind(el, binding /*, vnode*/) {
+                var delay = 0;
+                if (binding.modifiers["delayed"]) {
+                    delay = 4000;
+                }
+                setTimeout(() => {
+                    if (binding.arg == "background") {
+                        el.style.backgroundColor = binding.value;
+                    } else {
+                        el.style.color = binding.value;
+                    }
+                }, delay);
+            }
+        }
+    }
+};
 </script>
 
 <style>
 .dir-examples {
     border: 1px solid #ccc;
-
 }
 </style>
