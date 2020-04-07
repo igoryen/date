@@ -5,6 +5,7 @@
             <h2>Custom directives</h2>
             <div class="dir-examples">
                 <p v-highlight:background="'#ccc'">Color this</p>
+                <p v-highlight:background.delayed="'pink'">Colored with delay</p>
             </div>
         </div>
         <div>
