@@ -11,6 +11,10 @@ export const eventBus = new Vue({
     }
 });
 
+Vue.filter('to-lowercase', function(value){
+    return value.toLowerCase();
+});
+
 Vue.directive('highlight', {
     bind(el, binding /*, vnode*/) {
         var delay = 0;

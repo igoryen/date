@@ -1,7 +1,7 @@
 <template>
     <div class="filmix">
         <h1>Filters & Mixins</h1>
-        <p>{{ text | toUppercase }}</p>
+        <p>{{ text | toUppercase | to-lowercase }}</p>
     </div>
 </template>
 <script>
