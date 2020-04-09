@@ -1,31 +1,20 @@
 <template>
-    <div class="filmix">
-        <h1>Filters & Mixins</h1>
+    <div class="list">
+        <h2>List</h2>
         <hr>
         <input type="text" v-model="filterText">
         <ul>
             <li v-for="(fruit, index) in filteredFruits" :key="index"> {{ fruit }}</li>
         </ul>
         <hr>
-        <p>{{ text | toUppercase | to-lowercase }}</p>
-        <hr>
-        <app-list></app-list>
     </div>
 </template>
 <script>
-import List from './List.vue';
 export default {
     data() {
         return {
             fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
             filterText: '',
-            text: "Hello there!"
-        }
-    },
-    filters: {
-        // 'to-uppercase'() // also possible
-        toUppercase(value) {
-            return value.toUpperCase();
         }
     },
     computed: {
@@ -34,15 +23,12 @@ export default {
                 return element.match(this.filterText);
             });
         }
-    },
-    components: {
-        appList: List
     }
 }
 </script>
 <style lang="scss" scoped>
-.filmix {
-    background-color: lightblue;
+.list {
+    background-color: bisque;
     margin: 1em;
     border: 1px solid;
     ul {
