@@ -11,6 +11,13 @@ export const eventBus = new Vue({
     }
 });
 
+// don't use in production
+Vue.mixin({
+    created() {
+        console.log('Global mixin (main.js) - created hook');
+    }
+});
+
 Vue.filter('to-lowercase', function(value){
     return value.toLowerCase();
 });
