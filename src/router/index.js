@@ -70,6 +70,14 @@ const routes = [
         }
     },
     {
+        path: '/filmix',
+        name: 'Filmix',
+        components: {
+            default: () => import('../components/filmix/Filmix.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
         path: '/redirect-me',
         redirect: {
             name: 'Home'
