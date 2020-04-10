@@ -2,7 +2,10 @@
     <div class="filmix">
         <h1>Filters & Mixins</h1>
         <hr>
-        <input type="text" v-model="filterText">
+        <button @click="fruits.push('Berries')">Add new item</button>
+        <div>
+            <input type="text" v-model="filterText">
+        </div>
         <ul>
             <li v-for="(fruit, index) in filteredFruits" :key="index"> {{ fruit }}</li>
         </ul>
