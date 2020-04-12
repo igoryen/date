@@ -7,7 +7,8 @@
             <router-link to="/book">Book</router-link> |
             <router-link to="/quote">Quote</router-link> |
             <router-link to="/directives">Directives</router-link> | 
-            <router-link to="/filmix">Filmix</router-link>
+            <router-link to="/filmix">Filmix</router-link> |
+            <router-link to="/transitions">Transitions</router-link>
         </div>
     </div>
 </template>

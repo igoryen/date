@@ -78,6 +78,14 @@ const routes = [
         }
     },
     {
+        path: '/transitions',
+        name: 'Transitions',
+        components: {
+            default: () => import('../components/transitions/Transitions.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
         path: '/redirect-me',
         redirect: {
             name: 'Home'
