@@ -62,16 +62,27 @@ export default {
         return {
             show: true,
             load: true,
-            alertAnimation: 'fade'
+            alertAnimation: 'fade',
+            elementWidth: 100
         }
     },
     methods: {
-        beforeEnter(){
+        beforeEnter( elt ){
             console.log('beforeEnter - Vue has started adding the element');
+            this.elementWidth = 100;
+            elt.style.width = this.elementWidth + 'px';
         },
         enter( elt, done ) {
             console.log('enter - Vue is in the process of adding the element');
-            done();
+            let round = 1;
+            const interval = setInterval(() => {
+                elt.style.width = (this.elementWidth + round * 10) + 'px';
+                round++;
+                if(round > 20) {
+                    clearInterval( interval );
+                    done();
+                }
+            }, 20);
         }, 
         afterEnter() {
             console.log('afterEnter - Vue has finished adding the element');
@@ -80,12 +91,22 @@ export default {
             console.log('enterCancelled');
         },
         //-----
-        beforeLeave(){
+        beforeLeave( elt ){
             console.log('beforeLeave - Vue has started removing the element');
+            this.elementWidth = 300;
+            elt.style.width = this.elementWidth + 'px';
         },
         leave( elt, done ) {
             console.log('leave - Vue is in the process of removing the element');
-            done();
+            let round = 1;
+            const interval = setInterval(() => {
+                elt.style.width = (this.elementWidth - round * 10) + 'px';
+                round++;
+                if(round > 20) {
+                    clearInterval( interval );
+                    done();
+                }
+            }, 20);
         }, 
         afterLeave() {
             console.log('afterLeave - Vue has finished removing the element');
@@ -100,8 +121,8 @@ export default {
 <style lang="scss" scoped>
     .abc {
         background-color: aquamarine;
-        width: 100px;
         height: 100px;
+        width: 300px;
     }
     .appr {
         background-color: aquamarine;
