@@ -47,6 +47,8 @@
             @leave="leave"
             @after-leave="afterLeave"
             @leave-cancelled="leaveCancelled"
+
+            :css="false"
             >
             <div class="abc" v-if="load"></div>
         </transition>
