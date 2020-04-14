@@ -13,6 +13,13 @@
         <transition name="fade" appear>
             <div v-if="show" class="appr">sliding alert 2</div>
         </transition>
+        <transition
+                appear
+                enter-active-class="animated bounce"
+                leave-active-class="animated shake"
+            >
+            <div v-if="show" class="appr">sliding alert 3</div>
+        </transition>
     </div>
 </template>
 
@@ -29,6 +36,7 @@ export default {
 <style lang="scss" scoped>
     .appr {
         background-color: aquamarine;
+        margin: 1em;
         padding: 1em;
     }
     .fade {
