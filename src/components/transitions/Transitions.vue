@@ -10,6 +10,9 @@
         <transition name="slide" type="animation">
             <div v-show="show">sliding alert</div>
         </transition>
+        <transition name="fade" appear>
+            <div v-if="show" class="appr">sliding alert 2</div>
+        </transition>
     </div>
 </template>
 
@@ -17,13 +20,17 @@
 export default {
     data() {
         return {
-            show: false
+            show: true
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+    .appr {
+        background-color: aquamarine;
+        padding: 1em;
+    }
     .fade {
         &-enter {
             opacity: 0;
