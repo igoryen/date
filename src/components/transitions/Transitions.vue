@@ -4,6 +4,20 @@
         <h1></h1>
         <button @click="show = !show">Show an alert()</button>
         <br><br>
+        <hr>
+        <transition :name="alertAnimation" mode="out-in">
+            <div key="alpha" v-if="show">Alpha</div>
+            <div key="bravo" v-else>Bravo</div>
+        </transition>
+        <hr>
+        <select name="" id="" v-model="alertAnimation">
+            <option value="fade">Fade</option>
+            <option value="slide">Slide</option>
+        </select>
+        <transition :name="alertAnimation">
+            <div v-if="show">alert with selectable transition</div>
+        </transition>
+        <hr>
         <transition name="fade">
             <div v-if="show">fading alert</div>
         </transition>
@@ -27,7 +41,8 @@
 export default {
     data() {
         return {
-            show: true
+            show: true,
+            alertAnimation: 'fade'
         }
     }
 }
@@ -64,7 +79,7 @@ export default {
         &-leave {
             &-active {
                 animation: slide-out 1s ease-out forwards;
-                transition: opacity 3s;
+                transition: opacity 1s;
                 opacity: 0;
             }
         }
