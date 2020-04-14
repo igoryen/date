@@ -34,6 +34,23 @@
             >
             <div v-if="show" class="appr">sliding alert 3</div>
         </transition>
+        <hr>
+        <button @click="load = !load">Load/Remove element</button>
+        <br><br>
+        <transition
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @after-enter="afterEnter"
+            @enter-cancelled="enterCancelled"
+
+            @before-leave="beforeLeave"
+            @leave="leave"
+            @after-leave="afterLeave"
+            @leave-cancelled="leaveCancelled"
+            >
+            <div class="abc" v-if="load"></div>
+        </transition>
+
     </div>
 </template>
 
@@ -42,13 +59,48 @@ export default {
     data() {
         return {
             show: true,
+            load: true,
             alertAnimation: 'fade'
+        }
+    },
+    methods: {
+        beforeEnter(){
+            console.log('beforeEnter - Vue has started adding the element');
+        },
+        enter( elt, done ) {
+            console.log('enter - Vue is in the process of adding the element');
+            done();
+        }, 
+        afterEnter() {
+            console.log('afterEnter - Vue has finished adding the element');
+        }, 
+        enterCancelled() {
+            console.log('enterCancelled');
+        },
+        //-----
+        beforeLeave(){
+            console.log('beforeLeave - Vue has started removing the element');
+        },
+        leave( elt, done ) {
+            console.log('leave - Vue is in the process of removing the element');
+            done();
+        }, 
+        afterLeave() {
+            console.log('afterLeave - Vue has finished removing the element');
+        }, 
+        leaveCancelled() {
+            console.log('leaveCancelled');
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+    .abc {
+        background-color: aquamarine;
+        width: 100px;
+        height: 100px;
+    }
     .appr {
         background-color: aquamarine;
         margin: 1em;
