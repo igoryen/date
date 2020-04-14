@@ -8,7 +8,7 @@
             <div v-if="show">fading alert</div>
         </transition>
         <transition name="slide" type="animation">
-            <div v-if="show">sliding alert</div>
+            <div v-show="show">sliding alert</div>
         </transition>
     </div>
 </template>
