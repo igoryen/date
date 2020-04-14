@@ -7,7 +7,7 @@
         <transition name="fade">
             <div v-if="show">fading alert</div>
         </transition>
-        <transition name="slide">
+        <transition name="slide" type="animation">
             <div v-if="show">sliding alert</div>
         </transition>
     </div>
@@ -49,7 +49,7 @@ export default {
         &-leave {
             &-active {
                 animation: slide-out 1s ease-out forwards;
-                transition: opacity 1s;
+                transition: opacity 3s;
                 opacity: 0;
             }
         }
