@@ -40,13 +40,17 @@ export default {
     }
     .slide {
         &-enter {
+            opacity: 0;
             &-active {
                 animation: slide-in 1s ease-out forwards;
+                transition: opacity 0.5s;
             }
         }
         &-leave {
             &-active {
                 animation: slide-out 1s ease-out forwards;
+                transition: opacity 1s;
+                opacity: 0;
             }
         }
     }
