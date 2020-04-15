@@ -2,7 +2,10 @@
     <div class="trans">
         <h1>Transitions</h1>
         <hr>
-        <app-quiz></app-quiz>
+        <component
+            :is="mode"
+            @replied="replied($event)"
+            @confirmed="mode='app-q'"></component>
         <hr>
         <button @click="show = !show">Show an alert()</button>
         <br><br>
@@ -74,11 +77,14 @@
 
 <script>
 import qz from './Quiz.vue';
+import q from './QzQuestion.vue';
+import a from './QzAnswer.vue';
 import da from './DangerAlert.vue';
 import sa from './SuccessAlert.vue';
 export default {
     data() {
         return {
+            mode: 'app-q',
             show: true,
             load: true,
             alertAnimation: 'fade',
@@ -88,6 +94,15 @@ export default {
         }
     },
     methods: {
+        replied(iscqt) {
+            if(iscqt) {
+                this.mode = 'app-a';
+            }
+            else {
+                this.mode = 'app-q';
+                alert('Try again')
+            }
+        },
         beforeEnter( elt ){
             console.log('beforeEnter - Vue has started adding the element');
             this.elementWidth = 100;
@@ -145,6 +160,8 @@ export default {
     },
     components: {
         appQuiz: qz,
+        appQ: q,
+        appA: a,
         appDa: da,
         appSa: sa
     }
@@ -152,6 +169,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .question, .answer {
+        height: 150px;
+    }
     .list-item {
         background-color: antiquewhite;
         cursor: pointer;
