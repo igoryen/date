@@ -61,9 +61,11 @@
         <hr>
         <button @click="addItem">Add item</button>
         <ul>
-            <li class="list-item"
-                v-for="(n, idx) in nums" :key='idx' 
-                @click="remItem(idx)">{{ n }}</li>
+            <transition-group name="slide">
+                <li class="list-item"
+                    v-for="(n, idx) in nums" :key='n'
+                    @click="remItem(idx)">{{ n }}</li>
+            </transition-group>
         </ul>
     </div>
 </template>
@@ -189,7 +191,11 @@ export default {
                 animation: slide-out 1s ease-out forwards;
                 transition: opacity 1s;
                 opacity: 0;
+                // position: absolute;
             }
+        }
+        &-move {
+            transition: transform 1s;
         }
     }
 
