@@ -1,7 +1,9 @@
 <template>
     <div class="trans">
         <h1>Transitions</h1>
-        <h1></h1>
+        <hr>
+        <app-quiz></app-quiz>
+        <hr>
         <button @click="show = !show">Show an alert()</button>
         <br><br>
         <hr>
@@ -71,6 +73,7 @@
 </template>
 
 <script>
+import qz from './Quiz.vue';
 import da from './DangerAlert.vue';
 import sa from './SuccessAlert.vue';
 export default {
@@ -141,6 +144,7 @@ export default {
         }
     },
     components: {
+        appQuiz: qz,
         appDa: da,
         appSa: sa
     }
