@@ -55,8 +55,9 @@
         <hr>
         <button @click="sc == 'app-sa' ? sc = 'app-da' : sc = 'app-sa'">Toggle Components</button>
         <br>
-        <component :is="sc"></component>
-
+        <transition name="fade" mode="out-in">
+            <component :is="sc"></component>
+        </transition>
     </div>
 </template>
 

@@ -8,6 +8,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    .dangeralert {
+        padding: 1em;
+        background-color: lightsalmon;
+        margin: 10px;
+    }
 </style>
