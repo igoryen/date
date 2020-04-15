@@ -8,7 +8,8 @@
             <router-link to="/quote">Quote</router-link> |
             <router-link to="/directives">Directives</router-link> | 
             <router-link to="/filmix">Filmix</router-link> |
-            <router-link to="/transitions">Transitions</router-link>
+            <router-link to="/transitions">Transitions</router-link> | 
+            <router-link to="/trader">Trader</router-link>
         </div>
     </div>
 </template>

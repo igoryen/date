@@ -86,6 +86,14 @@ const routes = [
         }
     },
     {
+        path: '/trader',
+        name: 'Trader',
+        components: {
+            default: () => import('../components/stocktrader/Trader.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
         path: '/redirect-me',
         redirect: {
             name: 'Home'
