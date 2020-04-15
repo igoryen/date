@@ -2,10 +2,12 @@
     <div class="trans">
         <h1>Transitions</h1>
         <hr>
-        <component
-            :is="mode"
-            @replied="replied($event)"
-            @confirmed="mode='app-q'"></component>
+        <transition name="flip" mode="out-in">
+            <component
+                :is="mode"
+                @replied="replied($event)"
+                @confirmed="mode='app-q'"></component>
+        </transition>
         <hr>
         <button @click="show = !show">Show an alert()</button>
         <br><br>
@@ -169,6 +171,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .flip {
+        &-enter {
+            &-active {
+                animation: flip-in 0.25s ease-out forwards;
+            }
+        }
+        &-leave {
+            &-active {
+                animation: flip-out 0.25s ease-out forwards;
+            }
+        }
+    }
+     @keyframes flip-in {
+        from{
+            transform: rotateY( 90deg );
+        }
+        to {
+            transform: rotateY( 0deg );
+        }
+    }
+    @keyframes flip-out {
+        from{
+            transform: rotateY( 0deg );
+        }
+        to {
+            transform: rotateY( 90deg );
+        }
+    }
+    //===============================
     .question, .answer {
         height: 150px;
     }
