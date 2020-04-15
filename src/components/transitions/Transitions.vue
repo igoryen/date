@@ -58,6 +58,13 @@
         <transition name="fade" mode="out-in">
             <component :is="sc"></component>
         </transition>
+        <hr>
+        <button @click="addItem">Add item</button>
+        <ul>
+            <li class="list-item"
+                v-for="(n, idx) in nums" :key='idx' 
+                @click="remItem(idx)">{{ n }}</li>
+        </ul>
     </div>
 </template>
 
@@ -71,7 +78,8 @@ export default {
             load: true,
             alertAnimation: 'fade',
             elementWidth: 100,
-            sc: 'app-sa' // sc = selected component
+            sc: 'app-sa', // sc = selected component
+            nums: ['one', 'two', 'three', 'four', 'five'] // num = number
         }
     },
     methods: {
@@ -121,6 +129,13 @@ export default {
         }, 
         leaveCancelled() {
             console.log('leaveCancelled');
+        },
+        addItem() {
+            const pos = Math.floor(Math.random() * this.nums.length);
+            this.nums.splice( pos, 0, this.nums.length + 1);
+        },
+        remItem(idx) {
+            this.nums.splice(idx, 1);
         }
     },
     components: {
@@ -131,6 +146,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .list-item {
+        background-color: antiquewhite;
+        cursor: pointer;
+        margin: 3px;
+        list-style: none;
+    }
     .abc {
         background-color: aquamarine;
         height: 100px;
