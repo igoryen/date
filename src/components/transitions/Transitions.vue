@@ -52,18 +52,25 @@
             >
             <div class="abc" v-if="load"></div>
         </transition>
+        <hr>
+        <button @click="sc == 'app-sa' ? sc = 'app-da' : sc = 'app-sa'">Toggle Components</button>
+        <br>
+        <component :is="sc"></component>
 
     </div>
 </template>
 
 <script>
+import da from './DangerAlert.vue';
+import sa from './SuccessAlert.vue';
 export default {
     data() {
         return {
             show: true,
             load: true,
             alertAnimation: 'fade',
-            elementWidth: 100
+            elementWidth: 100,
+            sc: 'app-sa' // sc = selected component
         }
     },
     methods: {
@@ -114,6 +121,10 @@ export default {
         leaveCancelled() {
             console.log('leaveCancelled');
         }
+    },
+    components: {
+        appDa: da,
+        appSa: sa
     }
 }
 </script>
