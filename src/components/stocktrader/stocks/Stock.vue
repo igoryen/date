@@ -1,16 +1,35 @@
 <template>
     <div class="stock">
-        <h4>NAME <small>(Price: PRICE)</small></h4>
+        <h4>{{stock.name}} <small>(Price: {{stock.price}})</small></h4>
         <div class="body">
-            <input type="number" placeholder="quantity">
-            <button>Buy</button>
+            <input type="number" placeholder="quantity" v-model="qty">
+            <button
+                @click="buyStock"
+                :disabled="qty <= 0 || !Number.isInteger(0)"
+            >Buy</button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-
+    props: ['stock'],
+    data() {
+        return {
+            qty: 0
+        }
+    },
+    methods: {
+        buyStock() {
+            const ord = { // ord = order
+                stockId: this.stock.id,
+                stockPx: this.stock.px, // px = price
+                qty: this.qty
+            };
+            console.log(ord);
+            this.qty = 0;
+        }
+    }
 }
 </script>
 
@@ -32,6 +51,11 @@ export default {
         padding: 3px;
         input {
             max-width: 5em;
+        }
+        button {
+            &:disabled {
+                color: #ccc;
+            }
         }
     }
 </style>
