@@ -1,7 +1,7 @@
 <template>
-    <div class="trader">
+    <div class="stocks">
         <div>
-            <h3>Stocks</h3>
+            <h2>Stock Trader - Stocks</h2>
         </div>
     </div>
 </template>

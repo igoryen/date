@@ -86,10 +86,26 @@ const routes = [
         }
     },
     {
-        path: '/trader',
-        name: 'Trader',
+        path: '/sthome',
+        name: 'ST Home',
         components: {
             default: () => import('../components/stocktrader/Trader.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
+        path: '/stportfolio',
+        name: 'ST Portfolio',
+        components: {
+            default: () => import('../components/stocktrader/portfolio/Portfolio.vue'),
+            'header-top': () => import('../components/Header.vue')
+        }
+    },
+    {
+        path: '/ststocks',
+        name: 'ST Stocks',
+        components: {
+            default: () => import('../components/stocktrader/stocks/Stocks.vue'),
             'header-top': () => import('../components/Header.vue')
         }
     },
