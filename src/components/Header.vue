@@ -1,22 +1,58 @@
 <template>
     <div class="header">
         <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link> |
-            <router-link to="/user">User</router-link> |
-            <router-link to="/book">Book</router-link> |
-            <router-link to="/quote">Quote</router-link> |
-            <router-link to="/directives">Directives</router-link> | 
-            <router-link to="/filmix">Filmix</router-link> |
-            <router-link to="/transitions">Transitions</router-link> | 
-            <router-link to="/sthome">ST-Home</router-link> |
-            <router-link to="/stportfolio">ST-Portf</router-link> |
-            <router-link to="/ststocks">ST-Stocks</router-link>
+            <router-link to="/">
+                <span @click="sth = false">Home</span></router-link> |
+            <router-link to="/about">
+                <span @click="sth = false">About</span></router-link> |
+            <router-link to="/user">
+                <span @click="sth = false">User</span></router-link> |
+            <router-link to="/book">
+                <span @click="sth = false">Book</span></router-link> |
+            <router-link to="/quote">
+                <span @click="sth = false">Quote</span></router-link> |
+            <router-link to="/directives">
+                <span @click="sth = false">Directives</span></router-link> | 
+            <router-link to="/filmix">
+                <span @click="sth = false">Filmix</span></router-link> |
+            <router-link to="/transitions">
+                <span @click="sth = false">Transitions</span></router-link> | 
+            <router-link to="/sthome">
+                <span @click="sth = true">ST-Home</span></router-link> |
+            <router-link to="/stportfolio">
+                <span @click="sth = true">ST-Portf</span></router-link> |
+            <router-link to="/ststocks">
+                <span @click="sth = true">ST-Stocks</span></router-link>
+        </div>
+        <div class="st" v-if="sth">
+            <span>Stock trader</span>
+            <div class="links">
+                <a href="">End Day</a> |
+                <a href="">Save data</a> |
+                <a href="">Load data</a>
+            </div>
         </div>
     </div>
 </template>
-<script></script>
+<script>
+    export default {
+        data() {
+            return {
+                sth: false // stock trader's header
+            }
+        }
+    }
+</script>
 <style lang="scss" scoped>
+    .st {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: space-between;
+        a {
+            margin: 3px 0.5em;
+        }
+
+    }
     #nav {
         padding: 1em;
     }
