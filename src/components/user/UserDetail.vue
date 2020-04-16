@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="user-detail">
         <h3>Some User Details</h3>
         <pre>UseDetail.vue</pre>
         <p>The loaded user's ID: {{ $route.params.id }}</p>
@@ -42,3 +42,12 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+    .user-detail {
+        padding: 5px;
+        background-color: lightpink;
+        box-shadow: 1px 1px 1px #000;
+        padding: 1em;
+    }
+</style>

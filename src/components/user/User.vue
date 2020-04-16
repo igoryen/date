@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="user">
         <h1>The User Page</h1>
         <router-view />
         <hr />
@@ -20,3 +20,11 @@ export default {
     }
 };
 </script>
+<style lang="scss">
+    .user {
+        padding: 5px;
+        background-color: lightcyan;
+        box-shadow: 1px 1px 1px #000;
+        padding: 1em;
+    }
+</style>

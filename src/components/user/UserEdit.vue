@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="user-edit">
         <pre>UseEdit.vue</pre>
         <h3>Edit the User</h3>
         <p>Locale: {{ $route.query.locale }} </p>
@@ -33,6 +33,12 @@ export default {
 }
 </script>
 <style>
+    .user-edit {
+        padding: 5px;
+        background-color: lightgoldenrodyellow;
+        box-shadow: 1px 1px 1px #000;
+        padding: 1em;
+    }
     .abc {
         background-color: bisque;
         height: 700px;

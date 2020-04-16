@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="user-start">
+        <pre>UserStart.vue</pre>
         <p>Please select a User</p>
         <hr>
         <ul class="list-group">
@@ -10,6 +11,12 @@
     </div>
 </template>
 <style lang="scss" scoped>
+.user-start {
+    padding: 5px;
+    background-color: lavenderblush;
+    box-shadow: 1px 1px 1px #000;
+    padding: 1em;
+}
 ul {
     &.list-group {
         border: 1px solid #f2f2f2;
