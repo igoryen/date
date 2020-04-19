@@ -25,6 +25,10 @@ Vue.filter('to-lowercase', function(value){
     return value.toLowerCase();
 });
 
+Vue.filter( 'currency', (val) => {
+    return '$' + val.toLocaleString();
+});
+
 Vue.directive('highlight', {
     bind(el, binding /*, vnode*/) {
         var delay = 0;

@@ -30,7 +30,7 @@
                 <a href="">End Day</a> |
                 <a href="">Save data</a> |
                 <a href="">Load data</a> |
-                <span>Your funds: ${{ funds }}</span>
+                <span>Your funds: {{ funds | currency }}</span>
             </div>
         </div>
     </div>
