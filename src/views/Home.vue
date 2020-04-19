@@ -16,6 +16,11 @@
             <span class="output">{{ value }}</span>
             <input @keydown.enter="val2 = $event.target.value" type="text" placeholder="on click Enter">
             <span class="output">{{ val2 }}</span>
+            <hr>
+            <button @click="val3+=5">Add 5</button>
+            <button @click="val3+=1">Add 1</button>
+            <span>Current value: {{ val3 }}</span>
+            <span class="output">Result: {{ res }}</span>
         </div>
     </div>
 </template>
@@ -36,7 +41,8 @@ export default {
             img: 'http://www.valuecoders.com/blog/wp-content/uploads/2016/11/Vue.js-cover-150x105.png',
             txt: 'i am an input',
             value: '',
-            val2: ''
+            val2: '',
+            val3: 0
         }
     },
     methods: {
@@ -45,6 +51,19 @@ export default {
         },
         alertme: function() {
             alert('Hi!')
+        }
+    },
+    computed: {
+        res: function(){
+            return this.val3 == 43 ? 'done. Will reset in 2 secs' : 'Add 5 and 1 until 43';
+        }
+    },
+    watch: {
+        res: function() {
+            var vm = this;
+            setTimeout( function(){
+                vm.val3 = 0;
+            }, 2000)
         }
     }
 };
@@ -59,6 +78,9 @@ export default {
             border: 1px solid #ccc;
             margin: 3px;
             padding: 3px;
+        }
+        hr {
+            width: 100%;
         }
     }
     .output {
