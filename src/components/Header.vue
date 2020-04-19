@@ -12,11 +12,11 @@
             <router-link to="/quote">
                 <span @click="sth = false">Quote</span></router-link> |
             <router-link to="/directives">
-                <span @click="sth = false">Directives</span></router-link> | 
+                <span @click="sth = false">Directives</span></router-link> |
             <router-link to="/filmix">
                 <span @click="sth = false">Filmix</span></router-link> |
             <router-link to="/transitions">
-                <span @click="sth = false">Transitions</span></router-link> | 
+                <span @click="sth = false">Transitions</span></router-link> |
             <router-link to="/sthome">
                 <span @click="sth = true">ST-Home</span></router-link> |
             <router-link to="/stportfolio">
@@ -29,7 +29,8 @@
             <div class="links">
                 <a href="">End Day</a> |
                 <a href="">Save data</a> |
-                <a href="">Load data</a>
+                <a href="">Load data</a> |
+                <span>Your funds: ${{ funds }}</span>
             </div>
         </div>
     </div>
@@ -40,6 +41,11 @@
             return {
                 sth: false // stock trader's header
             }
+        },
+        computed: {
+            funds() {
+                return this.$store.getters.funds;
+            }
         }
     }
 </script>
@@ -48,6 +54,7 @@
         background-color: #f2f2f2;
         display: flex;
         justify-content: space-between;
+
         a {
             margin: 3px 0.5em;
         }
