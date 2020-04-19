@@ -160,7 +160,7 @@ const router = new VueRouter({
 });
 // to execute on each routing action
 router.beforeEach( (to, from, next) => {
-    console.log('global beforeEach');
+    // console.log('global beforeEach');
     // eslint-disable-next-line no-undef
     next(); // the permission to continue the routing action to the desired route/page
 });

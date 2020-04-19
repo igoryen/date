@@ -27,15 +27,16 @@
         <div class="st" v-if="sth">
             <span>Stock trader</span>
             <div class="links">
-                <a href="">End Day</a> |
-                <a href="">Save data</a> |
-                <a href="">Load data</a> |
+                <a href="#" @click="endDay">End Day</a> |
+                <a href="#">Save data</a> |
+                <a href="#">Load data</a> |
                 <span>Your funds: {{ funds | currency }}</span>
             </div>
         </div>
     </div>
 </template>
 <script>
+    import {mapActions} from 'vuex';
     export default {
         data() {
             return {
@@ -46,7 +47,15 @@
             funds() {
                 return this.$store.getters.funds;
             }
-        }
+        },
+        methods: {
+            ...mapActions([
+                'randomizeStocks'
+            ]),
+            endDay(){
+                this.randomizeStocks();
+            }
+        }        
     }
 </script>
 <style lang="scss" scoped>

@@ -17,7 +17,7 @@ export const eventBus = new Vue({
 // don't use in production
 Vue.mixin({
     created() {
-        console.log('Global mixin (main.js) - created hook');
+        // console.log('Global mixin (main.js) - created hook');
     }
 });
 
