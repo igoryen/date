@@ -1,6 +1,6 @@
 <template>
     <div class="stock">
-        <h4>{{stock.name}} <small>(Price: {{stock.price}})</small></h4>
+        <h4>{{stock.nom}} <small>(Price: {{stock.px}})</small></h4>
         <div class="body">
             <input type="number" placeholder="quantity" v-model="qty">
             <button
@@ -21,16 +21,21 @@ export default {
     },
     methods: {
         buyStock() {
-            const ord = { // ord = order
+            const ord = { // #1
                 stockId: this.stock.id,
-                stockPx: this.stock.px, // px = price
+                stockPx: this.stock.px, // #2
                 qty: this.qty
             };
-            console.log(ord);
+            // console.log(ord);
+            this.$store.dispatch('buyStock', ord);
             this.qty = 0;
         }
     }
 }
+/*
+1. ord = order
+2. px = price
+*/
 </script>
 
 <style lang="scss" scoped>
