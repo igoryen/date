@@ -2,11 +2,11 @@
     <div class="stock">
         <h4>{{stock.nom}} <small>(Price: {{stock.px}})</small></h4>
         <div class="body">
-            <input type="number" placeholder="quantity" v-model="qty">
+            <input type="number" placeholder="quantity" v-model="qty" :class="{danger: insuFunds}">
             <button
                 @click="buyStock"
-                :disabled="qty <= 0 || !Number.isInteger(0)"
-            >Buy</button>
+                :disabled="insuFunds || qty <= 0 || !Number.isInteger(0)"
+            >{{ insuFunds ? 'Insuf $' : 'Buy'}}</button>
         </div>
     </div>
 </template>
@@ -17,6 +17,14 @@ export default {
     data() {
         return {
             qty: 0
+        }
+    },
+    computed: {
+        funds() {
+            return this.$store.getters.funds;
+        },
+        insuFunds() {
+            return (this.qty * this.stock.px) > this.funds;
         }
     },
     methods: {
@@ -30,7 +38,7 @@ export default {
             this.$store.dispatch('buyStock', ord);
             this.qty = 0;
         }
-    }
+    },
 }
 /*
 1. ord = order
@@ -39,6 +47,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .danger {
+        border: 1px solid red;
+        background-color: orange;
+    }
     h4 {
         background-color: rgb(212, 255, 241);
         margin: 0;

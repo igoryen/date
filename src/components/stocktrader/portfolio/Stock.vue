@@ -2,11 +2,11 @@
     <div class="stock">
         <h4>{{stock.nom}} <small>(Px: {{stock.px}} | Qty: {{ stock.qty }})</small></h4>
         <div class="body">
-            <input type="number" placeholder="quantity" v-model="qty">
+            <input type="number" placeholder="quantity" v-model="qty" :class="{danger: insufQty}">
             <button
                 @click="sellStock"
-                :disabled="qty <= 0 || !Number.isInteger(0)"
-            >Sell</button>
+                :disabled="insufQty || qty <= 0 || !Number.isInteger(0)"
+            >{{ insufQty ? 'Insuf stocks' : 'Sell'}}</button>
         </div>
     </div>
 </template>
@@ -18,6 +18,11 @@ export default {
     data() {
         return {
             qty: 0
+        }
+    },
+    computed: {
+        insufQty() {
+            return this.qty > this.stock.qty;
         }
     },
     methods: {
@@ -43,6 +48,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .danger {
+        border: 1px solid red;
+        background-color: orange;
+    }
     h4 {
         background-color: rgb(186, 206, 248);
         margin: 0;
