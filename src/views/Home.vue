@@ -21,6 +21,8 @@
             <button @click="val3+=1">Add 1</button>
             <span>Current value: {{ val3 }}</span>
             <span class="output">Result: {{ res }}</span>
+            <hr>
+            <app-styles></app-styles>
         </div>
     </div>
 </template>
@@ -28,11 +30,13 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import StylesEx from '@/components/exercises/Styles.vue';
 
 export default {
     name: "Home",
     components: {
-        HelloWorld
+        HelloWorld,
+        appStyles: StylesEx
     },
     data() {
         return {
