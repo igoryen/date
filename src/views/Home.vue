@@ -23,6 +23,8 @@
             <span class="output">Result: {{ res }}</span>
             <hr>
             <app-styles></app-styles>
+            <hr>
+            <app-condlist></app-condlist>
         </div>
     </div>
 </template>
@@ -31,12 +33,14 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import StylesEx from '@/components/exercises/Styles.vue';
+import condlist from '@/components/exercises/CondList.vue';
 
 export default {
     name: "Home",
     components: {
         HelloWorld,
-        appStyles: StylesEx
+        appStyles: StylesEx,
+        appCondlist: condlist
     },
     data() {
         return {
