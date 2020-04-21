@@ -14,6 +14,7 @@ export const eventBus = new Vue({
         }
     }
 });
+export const serverBus = new Vue({});
 
 // don't use in production
 Vue.mixin({

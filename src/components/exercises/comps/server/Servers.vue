@@ -6,7 +6,7 @@
         <div class="b">            
             <div class="bb">
                 <ul>
-                    <app-server v-for="(server, idx) in servers" :key="idx" :id="server.id"></app-server>
+                    <app-server v-for="(server, idx) in servers" :key="idx" :server="server"></app-server>
                 </ul>
             </div>
         </div>
