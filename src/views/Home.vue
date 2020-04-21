@@ -56,6 +56,8 @@
                     </app-red> -->
                 </div>
             </div>
+            <hr>
+            <app-form></app-form>
         </div>
     </div>
 </template>
@@ -74,6 +76,8 @@ import Servers from '@/components/exercises/comps/server/Servers.vue';
 import Green from '@/components/exercises/comps/colored/Green.vue';
 import Blue from '@/components/exercises/comps/colored/Blue.vue';
 import Red from '@/components/exercises/comps/colored/Red.vue';
+//---
+import Form from '@/components/exercises/forms/Form.vue';
 
 export default {
     name: "Home",
@@ -88,7 +92,9 @@ export default {
         //----
         appRed: Red,
         appBlue: Blue,
-        appGreen: Green
+        appGreen: Green,
+        //----
+        appForm: Form
     },
     data() {
         return {
