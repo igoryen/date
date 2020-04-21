@@ -37,12 +37,15 @@
             <hr>
             <div class="clr-comps">
                 <div class="buttons">
-                    <button>Load blue template</button>
-                    <button>Load green template</button>
-                    <button>Load red template</button>
+                    <button @click="selComp = 'appBlue'" >Load blue template</button>
+                    <button @click="selComp = 'appGreen'">Load green template</button>
+                    <button @click="selComp = 'appRed'"  >Load red template</button>
                 </div>
                 <div class="templates">
-                    <app-blue>
+                    <component :is="selComp">
+                        <p>Some content</p>
+                    </component>
+                    <!-- <app-blue>
                         <p>Some content</p>
                     </app-blue>
                     <app-green>
@@ -50,7 +53,7 @@
                     </app-green>
                     <app-red>
                         <p>Some content</p>
-                    </app-red>
+                    </app-red> -->
                 </div>
             </div>
         </div>
@@ -89,6 +92,8 @@ export default {
     },
     data() {
         return {
+            selComp: 'appBlue', // #1
+            //----
             name: 'igoryen',
             age: 11,
             img: 'http://www.valuecoders.com/blog/wp-content/uploads/2016/11/Vue.js-cover-150x105.png',
@@ -120,6 +125,9 @@ export default {
         }
     }
 };
+/**
+ * 1. selComp = selected component
+ */
 </script>
 <style lang="scss">
     .clr-comps {
