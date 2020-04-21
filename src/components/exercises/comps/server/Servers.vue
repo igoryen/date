@@ -6,7 +6,7 @@
         <div class="b">            
             <div class="bb">
                 <ul>
-                    <li v-for="idx in 5 " :key="idx">Server #{{idx}}</li>
+                    <app-server v-for="(server, idx) in servers" :key="idx" :id="server.id"></app-server>
                 </ul>
             </div>
         </div>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import server from './Server.vue';
 export default {
     data: function() {
         return {
@@ -24,6 +25,9 @@ export default {
                 { id: 4, stat: 'Normal' }
             ]
         }
+    },
+    components: {
+        appServer: server
     }
 }
 </script>
