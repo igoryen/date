@@ -34,6 +34,19 @@
                 </div>
                 <app-serv-footer></app-serv-footer>
             </div>
+            <hr>
+            <div class="clr-comps">
+                <div class="buttons">
+                    <button>Load blue template</button>
+                    <button>Load green template</button>
+                    <button>Load red template</button>
+                </div>
+                <div class="templates">
+                    <app-blue></app-blue>
+                    <app-green></app-green>
+                    <app-red></app-red>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -48,6 +61,10 @@ import ServerFooter from '@/components/exercises/comps/shared/Footer.vue';
 import ServerHeader from '@/components/exercises/comps/shared/Header.vue';
 import ServerDeets from '@/components/exercises/comps/server/ServerDeets.vue';
 import Servers from '@/components/exercises/comps/server/Servers.vue';
+//---
+import Green from '@/components/exercises/comps/colored/Green.vue';
+import Blue from '@/components/exercises/comps/colored/Blue.vue';
+import Red from '@/components/exercises/comps/colored/Red.vue';
 
 export default {
     name: "Home",
@@ -58,7 +75,11 @@ export default {
         appServFooter: ServerFooter,
         appServHeader: ServerHeader,
         appServDeets: ServerDeets,
-        appServers: Servers
+        appServers: Servers,
+        //----
+        appRed: Red,
+        appBlue: Blue,
+        appGreen: Green
     },
     data() {
         return {
@@ -95,6 +116,17 @@ export default {
 };
 </script>
 <style lang="scss">
+    .clr-comps {
+        width: 100%;
+        .buttons {            
+            text-align: left;
+        }
+        .templates {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+        }
+    }
+    
     .ex-comps {
         background-color: lightcyan;
         padding: 0.5em;
