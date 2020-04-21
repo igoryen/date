@@ -28,7 +28,7 @@
             <hr>
             <div class="ex-comps">
                 <app-serv-header></app-serv-header>
-                <div>
+                <div class="b">
                     <app-servers></app-servers>
                     <app-serv-deets></app-serv-deets>
                 </div>
@@ -99,6 +99,10 @@ export default {
         background-color: lightcyan;
         padding: 0.5em;
         width: 100%;
+        .b {
+            display: grid;
+            grid-template-columns: 40% 40%;
+        }
     }
     .spans, .parent {
         display: flex;

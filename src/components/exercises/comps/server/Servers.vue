@@ -9,9 +9,6 @@
                     <li v-for="idx in 5 " :key="idx">Server #{{idx}}</li>
                 </ul>
             </div>
-            <div class="ba">
-                ba
-            </div>
         </div>
     </div>
 </template>
@@ -23,10 +20,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-    .b {
-        display: grid;
-        grid-template-columns: 40% 40%;
+    .comps-server {
+        background-color: bisque;
+        padding: 3px;
+    }
+    .a {
+        background-color: lightgoldenrodyellow
     }
     .ba {
         background-color: lavender;

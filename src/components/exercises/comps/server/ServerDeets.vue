@@ -1,6 +1,7 @@
 <template>
     <div class="comps-server-deets">
         <pre>Comps-server-deets</pre>
+        <p>server deets are currently not updated</p>
     </div>
 </template>
 
