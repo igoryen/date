@@ -62,6 +62,8 @@
             <app-dir></app-dir>
             <hr>
             <app-fm></app-fm>
+            <hr>
+            <app-ax1></app-ax1>
         </div>
     </div>
 </template>
@@ -86,6 +88,8 @@ import Form from '@/components/exercises/forms/Form.vue';
 import Dir from '@/components/exercises/directive/Dir.vue';
 //---
 import Fm from '@/components/exercises/filmix/Fm.vue';
+//--
+import ax1 from '@/components/axios/Ex1.vue';
 
 export default {
     name: "Home",
@@ -106,7 +110,9 @@ export default {
         //---
         appDir: Dir,
         //---
-        appFm: Fm
+        appFm: Fm,
+        //--
+        appAx1: ax1
     },
     data() {
         return {
