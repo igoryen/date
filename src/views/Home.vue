@@ -60,6 +60,8 @@
             <app-form></app-form>
             <hr>
             <app-dir></app-dir>
+            <hr>
+            <app-fm></app-fm>
         </div>
     </div>
 </template>
@@ -82,6 +84,8 @@ import Red from '@/components/exercises/comps/colored/Red.vue';
 import Form from '@/components/exercises/forms/Form.vue';
 //---
 import Dir from '@/components/exercises/directive/Dir.vue';
+//---
+import Fm from '@/components/exercises/filmix/Fm.vue';
 
 export default {
     name: "Home",
@@ -100,7 +104,9 @@ export default {
         //----
         appForm: Form,
         //---
-        appDir: Dir
+        appDir: Dir,
+        //---
+        appFm: Fm
     },
     data() {
         return {
