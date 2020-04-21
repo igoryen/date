@@ -15,7 +15,16 @@
 
 <script>
 export default {
-
+    data: function() {
+        return {
+            servers: [
+                { id: 1, stat: 'Normal' },
+                { id: 2, stat: 'Critical' },
+                { id: 3, stat: 'Unknown' },
+                { id: 4, stat: 'Normal' }
+            ]
+        }
+    }
 }
 </script>
 
