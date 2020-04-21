@@ -76,8 +76,8 @@ export default {
     }
 };
 </script>
-<style lang="scss" scoped>
-    .spans {
+<style lang="scss">
+    .spans, .parent {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -89,6 +89,13 @@ export default {
         }
         hr {
             width: 100%;
+        }
+        ul {
+            padding-left: 0;
+            text-align: left;
+        }
+        li {
+            list-style: none;
         }
     }
     .output {
