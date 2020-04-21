@@ -25,6 +25,15 @@
             <app-styles></app-styles>
             <hr>
             <app-condlist></app-condlist>
+            <hr>
+            <div class="ex-comps">
+                <app-serv-header></app-serv-header>
+                <div>
+                    <app-servers></app-servers>
+                    <app-serv-deets></app-serv-deets>
+                </div>
+                <app-serv-footer></app-serv-footer>
+            </div>
         </div>
     </div>
 </template>
@@ -34,13 +43,22 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import StylesEx from '@/components/exercises/Styles.vue';
 import condlist from '@/components/exercises/CondList.vue';
+//---
+import ServerFooter from '@/components/exercises/comps/shared/Footer.vue';
+import ServerHeader from '@/components/exercises/comps/shared/Header.vue';
+import ServerDeets from '@/components/exercises/comps/server/ServerDeets.vue';
+import Servers from '@/components/exercises/comps/server/Servers.vue';
 
 export default {
     name: "Home",
     components: {
         HelloWorld,
         appStyles: StylesEx,
-        appCondlist: condlist
+        appCondlist: condlist,
+        appServFooter: ServerFooter,
+        appServHeader: ServerHeader,
+        appServDeets: ServerDeets,
+        appServers: Servers
     },
     data() {
         return {
@@ -77,6 +95,11 @@ export default {
 };
 </script>
 <style lang="scss">
+    .ex-comps {
+        background-color: lightcyan;
+        padding: 0.5em;
+        width: 100%;
+    }
     .spans, .parent {
         display: flex;
         flex-direction: row;
