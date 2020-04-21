@@ -11,7 +11,9 @@
 </template>
 
 <script>
+import { calcLen } from './calcLenMixin';
 export default {
+    mixins: [calcLen],
     data() {
         return {
             text1: 'leon gateman diaper looter deeps peels swap',
@@ -26,9 +28,6 @@ export default {
     computed: {
         flip() {
             return this.text1.split("").reverse().join("");
-        },
-        calcLen() {
-            return this.text2 + ' (' + this.text2.length + ')';
         }
     }
 }
