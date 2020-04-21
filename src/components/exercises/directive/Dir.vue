@@ -2,6 +2,10 @@
     <div class="ex-dir">
         <strong>Directive</strong>
         <button v-customOn:click="clicked">Click me</button>
+        <div class="aa"
+            v-customOn:mouseenter="ratonEntrado"
+            v-customOn:mouseleave="ratonSalido"
+            ></div>
     </div>
 </template>
 
@@ -22,6 +26,12 @@ export default {
     methods: {
         clicked() {
             alert('I was clicked')
+        },
+        ratonEntrado() {
+            console.log('El raton ha entrado!')
+        },
+        ratonSalido() {
+            console.log('El raton ha salido!')
         }
     }
 }
@@ -29,5 +39,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.aa {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+}
 
 </style>
