@@ -42,9 +42,15 @@
                     <button>Load red template</button>
                 </div>
                 <div class="templates">
-                    <app-blue></app-blue>
-                    <app-green></app-green>
-                    <app-red></app-red>
+                    <app-blue>
+                        <p>Some content</p>
+                    </app-blue>
+                    <app-green>
+                        <p>Some content</p>
+                    </app-green>
+                    <app-red>
+                        <p>Some content</p>
+                    </app-red>
                 </div>
             </div>
         </div>

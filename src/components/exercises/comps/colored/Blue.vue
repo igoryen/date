@@ -1,5 +1,7 @@
 <template>
-    <div class="comp-blue">B</div>
+    <div class="comp-blue">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
