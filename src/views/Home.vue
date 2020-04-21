@@ -58,6 +58,8 @@
             </div>
             <hr>
             <app-form></app-form>
+            <hr>
+            <app-dir></app-dir>
         </div>
     </div>
 </template>
@@ -78,6 +80,8 @@ import Blue from '@/components/exercises/comps/colored/Blue.vue';
 import Red from '@/components/exercises/comps/colored/Red.vue';
 //---
 import Form from '@/components/exercises/forms/Form.vue';
+//---
+import Dir from '@/components/exercises/directive/Dir.vue';
 
 export default {
     name: "Home",
@@ -94,7 +98,9 @@ export default {
         appBlue: Blue,
         appGreen: Green,
         //----
-        appForm: Form
+        appForm: Form,
+        //---
+        appDir: Dir
     },
     data() {
         return {
