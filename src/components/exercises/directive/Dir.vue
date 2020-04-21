@@ -1,7 +1,7 @@
 <template>
     <div class="ex-dir">
         <strong>Directive</strong>
-        <button v-customOn="clicked">Click me</button>
+        <button v-customOn:click="clicked">Click me</button>
     </div>
 </template>
 
@@ -10,9 +10,12 @@ export default {
     directives: {
         customOn: {
             bind( el, binding ) {
-                el.onclick = () => {
-                    binding.value();
-                }
+                const type = binding.arg;
+                const fn = binding.value;
+                el.addEventListener(type, fn);
+                // el.onclick = () => {
+                //     binding.value();
+                // }
             }
         }
     },
