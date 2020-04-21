@@ -4,8 +4,7 @@
         <div class="form" v-if="!submitted">            
             <form action="">
                 <strong>form</strong>
-                <label>First name: <input type="text" v-model="fname"></label>
-                <label>Last name: <input type="text" v-model="lname"></label>
+                <app-full-name v-model="fullName"></app-full-name>
                 <label>Email: <input type="text" v-model="email"></label>
                 <label>Password: <input type="password" v-model="pwd"></label>
                 <div>
@@ -17,7 +16,7 @@
         </div>
         <div class="data" v-if="submitted">
             <strong>Your data</strong>
-            <p>Full Name: {{ fname }} {{ lname }}</p>
+            <p>Full Name: {{ fullName }}</p>
             <p>Email: {{ email }}</p>
             <p>Password: {{ pwd }}</p>
             <p>Store in DB? {{ storeData }}</p>
@@ -28,25 +27,26 @@
 </template>
 
 <script>
+import FullName from './FullName.vue';
 export default {
     data() {
         return {
-            fname: '',
-            lname: '',
+            fullName: 'igor entaltsev',
             email: '',
             pwd: '',
             storeData: 'yes',
             submitted: false
 
         }
+    },
+    components: {
+        appFullName: FullName
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .ex-form {
-    display: grid;
-    grid-template-columns: 40% 40%;
     width: 100%;
     .form {
         background-color: antiquewhite;
