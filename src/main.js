@@ -31,6 +31,10 @@ Vue.filter( 'currency', (val) => {
     return '$' + val.toLocaleString();
 });
 
+Vue.filter('calculateLength', (val) =>{
+    return val + ' (' + val.length + ')';
+});
+
 Vue.directive('highlight', {
     bind(el, binding /*, vnode*/) {
         var delay = 0;
