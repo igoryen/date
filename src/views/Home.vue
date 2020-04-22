@@ -2,6 +2,17 @@
     <div class="home">
         <pre>Hello from Home.vue</pre>
         <HelloWorld msg="Welcome to Your Vue.js App" />
+        <hr>
+        <section class="panel-set">
+            <div class="buttons">
+                <button @click="pckPnl = 'appPnlA'">A</button>
+                <button @click="pckPnl = 'appPnlB'">B</button>
+            </div>
+            <div class="panel">
+                <component :is="pckPnl"></component>
+            </div>
+        </section>
+        <hr>
         <div class="spans">
             <span>Name: {{ name }}</span>
             <span>Age: {{ age }}</span>
@@ -101,6 +112,8 @@ import ax1 from "@/components/axios/Ex1.vue";
 
 import ev from "@/components/envvar/EnvVar.vue";
 import InputLiveUpdate from "@/components/exercises/InputLiveUpdate.vue";
+import PanelA from "@/components/exercises/PanelA.vue";
+import PanelB from "@/components/exercises/PanelB.vue";
 
 export default {
     name: "Home",
@@ -126,7 +139,9 @@ export default {
         appAx1: ax1,
 
         appEnvVar: ev,
-        appIlu: InputLiveUpdate
+        appIlu: InputLiveUpdate,
+        appPnlA: PanelA,
+        appPnlB: PanelB
     },
     data() {
         return {
@@ -139,7 +154,8 @@ export default {
             txt: "i am an input",
             value: "",
             val2: "",
-            val3: 0
+            val3: 0,
+            pckPnl: "appPnlA"
         };
     },
     methods: {
@@ -193,7 +209,7 @@ $light_blue: #b3e0ff;
 $border_type: dashed;
 $border_type2: solid;
 
-@mixin span_styled {
+@mixin box_styled {
     background-color: #222222;
     border: 1px $border_type $dark040;
     padding: 3px;
@@ -247,13 +263,27 @@ button {
         color: $dark070;
     }
 }
+//----------------------------
 #app {
     color: $dark150;
 }
 
+.panel-set {
+    display: flex;
+    flex-direction: row;
+    div {
+        @include box_styled();
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
 .input-live-update {
     span {
-        @include span_styled;
+        @include box_styled;
     }
 }
 .clr-comps {
