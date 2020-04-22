@@ -1,7 +1,7 @@
 <template>
     <div class="styles">
-        <button @click="startEffect">Start Effect</button>
-        <span :class="ecl" id="effect" ></span>
+        
+        <hr>
         <span :class="[float, 'blue', 'text-color']">I've got no class</span>
         <input v-model="userClass" type="text">
         <span :class="[{visible: true}, userClass]"></span>
@@ -11,8 +11,7 @@
         <input v-model="myStyle.backgroundColor" type="text" placeholder="Type color name">
         <span :style="myStyle"></span>
         <hr>
-        <button @click="startProgress">Start progress</button>
-        <span :class="['progress-bar']" :style="progressBar"></span>
+        
     </div>
 </template>
 
@@ -20,10 +19,7 @@
 export default {
     data: function() {
         return {
-            ecl: { // ecl = effect classes
-                hlt: false, // hlt = highlight
-                shr: true // shr = shrink
-            },
+            
             float: 'float',
             userClass: '', // userClass = user class
             isVisible: true,
@@ -32,31 +28,9 @@ export default {
                 width: '100px',
                 height: '20px',
                 backgroundColor: 'gray'
-            },
-            progressBar: {
-                width: '0px',
-                backgroundColor: 'red'
-            }
+            },            
         }
     },
-    methods: {
-        startEffect: function() {
-            var vm = this;
-            setInterval( function(){
-                vm.ecl.hlt = !vm.ecl.hlt;
-                vm.ecl.shr = !vm.ecl.shr;
-            }, 1000);
-            
-        },
-        startProgress: function() {
-            var vm = this;
-            var width = 0;
-            setInterval(function(){
-                width = (width + 100)-(width/4);
-                vm.progressBar.width = width + 'px';
-            }, 500)
-        }
-    }
 
 }
 </script>

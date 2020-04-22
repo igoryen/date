@@ -7,6 +7,8 @@
             <div class="buttons">
                 <button @click="pckPnl = 'appPnlA'">A</button>
                 <button @click="pckPnl = 'appPnlB'">B</button>
+                <button @click="pckPnl = 'appPnlC'">C</button>
+                <button @click="pckPnl = 'appStyles'">Styles</button>
             </div>
             <div class="panel">
                 <component :is="pckPnl"></component>
@@ -18,7 +20,7 @@
             <hr />
             
             <hr />
-            <app-styles></app-styles>
+            
             <hr />
             <app-condlist></app-condlist>
             <hr />
@@ -95,6 +97,7 @@ import ev from "@/components/envvar/EnvVar.vue";
 import InputLiveUpdate from "@/components/exercises/InputLiveUpdate.vue";
 import PanelA from "@/components/exercises/PanelA.vue";
 import PanelB from "@/components/exercises/PanelB.vue";
+import PanelC from "@/components/exercises/PanelC.vue";
 
 export default {
     name: "Home",
@@ -122,7 +125,8 @@ export default {
         appEnvVar: ev,
         appIlu: InputLiveUpdate,
         appPnlA: PanelA,
-        appPnlB: PanelB
+        appPnlB: PanelB,
+        appPnlC: PanelC
     },
     data() {
         return {
@@ -463,12 +467,15 @@ form {
     }
 }
 //--------------
-.progress-bar {
-    width: 200px;
-    height: 20px;
-    background-color: $dark040;
-    border: 1px $border_type $dark030;
+.panel-b {
+    .progress-bar {
+        width: 200px;
+        height: 20px;
+        background-color: $dark040;
+        border: 1px $border_type $dark030;
+    }
 }
+
 //------
 .visible {
     width: 100px;
