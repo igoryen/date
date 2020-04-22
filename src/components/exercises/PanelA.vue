@@ -14,6 +14,11 @@
         <span class="output">{{ value }}</span>
         <input @keydown.enter="val2 = $event.target.value" type="text" placeholder="on click Enter" />
         <span class="output">{{ val2 }}</span>
+
+        <button @click="val3+=5">Add 5</button>
+        <button @click="val3+=1">Add 1</button>
+        <span>Current value: {{ val3 }}</span>
+        <span class="output">Result: {{ res }}</span>
     </div>
 </template>
 
@@ -37,6 +42,21 @@ export default {
         },
         alertme: function() {
             alert("Hi!");
+        }
+    },
+    computed: {
+        res: function() {
+            return this.val3 == 43
+                ? "done. Will reset in 2 secs"
+                : "Add 5 and 1 until 43";
+        }
+    },
+    watch: {
+        res: function() {
+            var vm = this;
+            setTimeout(function() {
+                vm.val3 = 0;
+            }, 2000);
         }
     }
 };

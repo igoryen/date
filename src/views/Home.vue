@@ -16,10 +16,7 @@
         <div class="spans">
 
             <hr />
-            <button @click="val3+=5">Add 5</button>
-            <button @click="val3+=1">Add 1</button>
-            <span>Current value: {{ val3 }}</span>
-            <span class="output">Result: {{ res }}</span>
+            
             <hr />
             <app-styles></app-styles>
             <hr />
@@ -133,21 +130,8 @@ export default {
             pckPnl: "appPnlA"
         };
     },
-    computed: {
-        res: function() {
-            return this.val3 == 43
-                ? "done. Will reset in 2 secs"
-                : "Add 5 and 1 until 43";
-        }
-    },
-    watch: {
-        res: function() {
-            var vm = this;
-            setTimeout(function() {
-                vm.val3 = 0;
-            }, 2000);
-        }
-    }
+    
+    
 };
 /**
  * 1. selComp = selected component
