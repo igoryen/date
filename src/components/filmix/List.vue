@@ -19,15 +19,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.list {
-    background-color: #000033;
-    margin: 1em;
-    border: 1px solid;
-    ul {
-        padding: 0;
-        li {
-            list-style: none;
-        }
-    }
-}
+
 </style>

@@ -161,11 +161,28 @@ export default {
  */
 </script>
 <style lang="scss">
+$dark000: #000000;
+$dark010: #111111;
+$dark020: #222222;
+$dark030: #333333;
+$dark040: #444444;
+$dark050: #555555;
+$dark060: #666666;
+$dark070: #777777;
+$dark080: #888888;
+$dark120: #cccccc;
+$dark150: #f2f2f2;
+
+$dark_blue: #12303b; // #0d1a26
+$dark_green: #0a420a; // #293d3d
+$dark_orange: #4d3200;
+$dark_red: #440808;
+
 
 body,
 div {
-    background-color: #111111;
-    color: #f2f2f2;
+    background-color: $dark010;
+    color: $dark150;
 }
 h1,
 h2,
@@ -174,25 +191,25 @@ h4,
 h5,
 h6,
 span {
-    background-color: #222;
-    color: #f2f2f2;
+    background-color: $dark020;
+    color: $dark150;
 }
 input,
 textarea {
-    background-color: #111111;
-    border-color: #f2f2f2;
-    color: #f2f2f2;
+    background-color: $dark010;
+    border-color: $dark150;
+    color: $dark150;
 }
 button {
     border-radius: 5px;
-    border: 2px solid #444;
-    background-color: #333;
-    color: #f2f2f2;
+    border: 2px solid $dark040;
+    background-color: $dark030;
+    color: $dark150;
     &[type="submit"] {
-        background-color: #222222;
+        background-color: $dark020;
     }
     &:disabled {
-        color: #777777;
+        color: $dark070;
     }
 }
 
@@ -208,7 +225,7 @@ button {
 }
 
 .ex-comps {
-    background-color: #333;
+    background-color: $dark030;
     padding: 0.5em;
     width: 100%;
     .b {
@@ -225,7 +242,7 @@ button {
     span,
     input,
     button {
-        border: 1px solid #333;
+        border: 1px solid $dark030;
         margin: 3px;
         padding: 3px;
     }
@@ -241,32 +258,32 @@ button {
     }
 }
 .output {
-    background-color: #222;
+    background-color: $dark020;
 }
 .q-info {
-    background-color: #222222;
+    background-color: $dark020;
 }
 .quote-author {
-    background-color: #333;
-    border: 1px solid #888888;
+    background-color: $dark030;
+    border: 1px solid $dark080;
     max-width: 500px;
     margin: auto;
 }
 //--------------------
 .danger {
     border: 1px solid red;
-    background-color: orange;
+    background-color: $dark_orange;
 }
 .stock {
     h4 {
-        background-color: #293d3d;
+        background-color: $dark_green;
         margin: 0;
     }
 }
 
 .stock {
     border-radius: 3px;
-    border: 1px solid #0d1a26;
+    border: 1px solid $dark_blue;
     margin: 0.5em;
     padding: 0.1em;
     width: 25%;
@@ -280,17 +297,17 @@ button {
     }
     button {
         &:disabled {
-            color: #ccc;
+            color: $dark120;
         }
     }
 }
 // BOOK ---------------
 .component {
-    border: 1px solid #333;
+    border: 1px solid $dark030;
     border-radius: 3px;
 }
 .book {
-    background-color: #444444;
+    background-color: $dark040;
     padding: 1em;
 }
 .flare {
@@ -298,17 +315,17 @@ button {
 }
 @keyframes flare {
     0% {
-        background-color: yellow;
+        background-color: $dark_orange;
         color: red;
     }
     100% {
         background-color: transparent;
-        color: #000;
+        color: $dark000;
     }
 }
 // Book Detail
 .deet {
-    background-color: #555555;
+    background-color: $dark050;
     margin: 1em;
     padding: 1em;
 }
@@ -321,31 +338,31 @@ button {
 }
 // BookEdit.vue
 .edit {
-    background-color: #222222;
+    background-color: $dark020;
     margin: 1em;
     padding: 1em;
 }
 // Directives.vue
 .dir-examples {
-    border: 1px solid #ccc;
+    border: 1px solid $dark120;
 }
 // comps/colored/Blue
 .comp-blue {
-    background-color: #12303b;
+    background-color: $dark_blue;
     border: 1px solid blue;
     margin: 20px auto;
     padding: 30px;
     text-align: center;
 }
 .comp-green {
-    background-color: #0a420a;
+    background-color: $dark_green;
     border: 1px solid green;
     margin: 20px auto;
     padding: 30px;
     text-align: center;
 }
 .comp-red {
-    background-color: #440808;
+    background-color: $dark_red;
     border: 1px solid red;
     margin: 20px auto;
     padding: 30px;
@@ -354,51 +371,51 @@ button {
 
 //---
 .single-server {
-    background-color: #111;
+    background-color: $dark010;
     cursor: pointer;
     &:hover {
-        background-color: #222;
+        background-color: $dark020;
     }
 }
 .comps-server-deets {
-    background-color: #111;
+    background-color: $dark010;
     text-align: left;
 }
 .comps-server {
-    background-color: #111;
+    background-color: $dark010;
     padding: 3px;
 }
 .a {
-    background-color: #222;
+    background-color: $dark020;
 }
 .ba {
-    background-color: #222;
+    background-color: $dark020;
 }
 .bb {
-    background-color: #222;
+    background-color: $dark020;
 }
 .comps-footer {
-    background-color: #111;
+    background-color: $dark010;
 }
 .comps-header {
-    background-color: #004d4d;
+    background-color: $dark_green;
 }
 // directive
 .aa {
-    background-color: #333;
+    background-color: $dark030;
     height: 100px;
     width: 100px;
 }
 // filters mixins
 .ex-fn {
-    background-color: lemonchiffon;
+    background-color: $dark030;
 }
 // form
 .ex-form {
     width: 100%;
 }
 .form {
-    background-color: #333333;
+    background-color: $dark030;
 }
 form {
     align-items: flex-start;
@@ -407,25 +424,25 @@ form {
     padding: 3px;
 }
 .data {
-    background-color: #333;
+    background-color: $dark030;
     padding: 3px;
     text-align: left;
     p {
-        // background-color: #111;
+        // background-color: $dark010;
     }
 }
 //--------------
 .progress-bar {
     width: 200px;
     height: 20px;
-    background-color: #444444;
-    border: 1px solid #333;
+    background-color: $dark040;
+    border: 1px solid $dark030;
 }
 //------
 .visible {
     width: 100px;
     height: 10px;
-    background-color: #444;
+    background-color: $dark040;
 }
 //----
 .blue {
@@ -457,7 +474,7 @@ form {
     width: 40px;
 }
 .shr {
-    background-color: #333;
+    background-color: $dark030;
     width: 10px !important;
 }
 #effect {
@@ -468,15 +485,15 @@ form {
 // Stock
 .danger {
     border: 1px solid red;
-    background-color: orange;
+    background-color: $dark_orange;
 }
 h4 {
-    background-color: rgb(186, 206, 248);
+    background-color: $dark_blue;
     margin: 0;
 }
 .stock {
     border-radius: 3px;
-    border: 1px solid rgb(140, 202, 243);
+    border: 1px solid $dark_green;
     margin: 0.5em;
     padding: 0.1em;
     width: 25%;
@@ -490,7 +507,7 @@ h4 {
     }
     button {
         &:disabled {
-            color: #444;
+            color: $dark040;
         }
     }
 }
@@ -509,9 +526,9 @@ h4 {
 
 //--
 .aaa {
-    background-color: #333;
-    border: 1px solid #666;
-    box-shadow: 1px 1px 1px black;
+    background-color: $dark030;
+    border: 1px solid $dark060;
+    box-shadow: 1px 1px 1px $dark010;
     margin: 30px auto;
     max-width: 300px;
     padding: 30px;
@@ -525,7 +542,7 @@ h4 {
 // }
 // QuoteGrid.vue
 .q-r {
-    background-color: #333333;
+    background-color: $dark030;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -534,8 +551,8 @@ h4 {
 }
 // Quote New
 .quote-new {
-    background-color: #333333;
-    border: 1px solid #ccc;
+    background-color: $dark030;
+    border: 1px solid $dark120;
     max-width: 500px;
     margin: auto;
 }
@@ -547,24 +564,24 @@ h4 {
 .panel-body {
     font-family: "Arizonia", cursive;
     font-size: 24px;
-    color: #f2f2f2;
+    color: $dark150;
 
-    border: 1px solid #ccc;
+    border: 1px solid $dark120;
 }
 .qwt {
-    background-color: #333;
+    background-color: $dark030;
     cursor: pointer;
     &:hover {
-        background-color: #555;
+        background-color: $dark050;
     }
 }
 // qwtheader.vue
 .qwt-header {
-    background-color: #333333;
+    background-color: $dark030;
     padding: 3px;
 }
 .grow {
-    background-color: #555555;
+    background-color: $dark050;
 }
 // stocks/Stocks.vue
 .stocks-box {
@@ -574,24 +591,24 @@ h4 {
 // DangerAlert.vue
 .dangeralert {
     padding: 1em;
-    background-color: #4d0000;
+    background-color: $dark_red;
     margin: 10px;
 }
 // Quiz.vue
 .quiz {
     border: 1px solid green;
-    background-color: #001f4d;
+    background-color: $dark_green;
 }
 // QzAnswer.vue
 .answer {
-    background-color: #00331a;
+    background-color: $dark_blue;
     margin: auto;
     max-width: 200px;
     padding: 1em;
 }
 // QzQuestion.vue
 .question {
-    background-color: #004d4d;
+    background-color: $dark_green;
     margin: auto;
     max-width: 200px;
     padding: 1em;
@@ -609,7 +626,7 @@ h4 {
 // Success Alert.vue
 .successalert {
     padding: 1em;
-    background-color: #00664d;
+    background-color: $dark_green;
     margin: 10px;
 }
 // Transitions.vue
@@ -647,18 +664,18 @@ h4 {
     height: 150px;
 }
 .list-item {
-    background-color: #4d0019;
+    background-color: $dark_red;
     cursor: pointer;
     margin: 3px;
     list-style: none;
 }
 .abc {
-    background-color: #003322;
+    background-color: $dark_green;
     height: 100px;
     width: 300px;
 }
 .appr {
-    background-color: #003322;
+    background-color: $dark_blue;
     margin: 1em;
     padding: 1em;
 }
@@ -716,54 +733,54 @@ h4 {
 // User.vue
 .user {
     padding: 5px;
-    background-color: #333333;
-    box-shadow: 1px 1px 1px #000;
+    background-color: $dark030;
+    box-shadow: 1px 1px 1px $dark000;
     padding: 1em;
 }
 // UserDetails.vue
 .user-detail {
     padding: 5px;
-    background-color: #333;
-    box-shadow: 1px 1px 1px #000;
+    background-color: $dark030;
+    box-shadow: 1px 1px 1px $dark000;
     padding: 1em;
 }
 // UserEdit.vue
 .user-edit {
     padding: 5px;
-    background-color: #333333;
-    box-shadow: 1px 1px 1px #000;
+    background-color: $dark030;
+    box-shadow: 1px 1px 1px $dark000;
     padding: 1em;
 }
 .abc {
-    background-color: #444444;
+    background-color: $dark040;
     height: 700px;
 }
 
 // UserStart.vue
 .user-start {
     padding: 5px;
-    background-color: #222222;
-    box-shadow: 1px 1px 1px #000;
+    background-color: $dark020;
+    box-shadow: 1px 1px 1px $dark000;
     padding: 1em;
 }
 ul {
     &.list-group {
-        border: 1px solid #444444;
+        border: 1px solid $dark040;
         padding: 0;
         li {
-            border: 1px solid #333333;
+            border: 1px solid $dark030;
             border-radius: 3px;
             list-style: none;
             margin: 2px;
             &:hover {
-                background-color: #333333;
+                background-color: $dark030;
             }
         }
     }
 }
 // Header.vue
 .st {
-    background-color: #333333;
+    background-color: $dark030;
     display: flex;
     justify-content: space-between;
 
@@ -773,16 +790,40 @@ ul {
 }
 #nav {
     padding: 1em;
-    background-color: #333333;
+    background-color: $dark030;
     span {
-        background-color: #333333;
+        background-color: $dark030;
     }
 }
 .header {
-    background-color: #333333;
+    background-color: $dark030;
     color: red;
     a {
         font-size: 10px;
+    }
+}
+// Filmix/List.vue
+.list {
+    background-color: $dark_blue;
+    margin: 1em;
+    border: 1px solid;
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+}
+// Filmix/Filmix.vue
+.filmix {
+    background-color: $dark_red;
+    margin: 1em;
+    border: 1px solid;
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+        }
     }
 }
 </style>
