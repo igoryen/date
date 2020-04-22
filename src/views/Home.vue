@@ -68,6 +68,8 @@
             <app-fm></app-fm>
             <hr />
             <app-ax1></app-ax1>
+            <hr>
+            <app-env-var></app-env-var>
         </div>
     </div>
 </template>
@@ -95,6 +97,8 @@ import Fm from "@/components/exercises/filmix/Fm.vue";
 //--
 import ax1 from "@/components/axios/Ex1.vue";
 
+import ev from "@/components/envvar/EnvVar.vue";
+
 export default {
     name: "Home",
     components: {
@@ -116,7 +120,9 @@ export default {
         //---
         appFm: Fm,
         //--
-        appAx1: ax1
+        appAx1: ax1,
+
+        appEnvVar: ev
     },
     data() {
         return {
@@ -178,11 +184,16 @@ $dark_green: #0a420a; // #293d3d
 $dark_orange: #4d3200;
 $dark_red: #440808;
 
+$light_blue: #b3e0ff;
+
 
 body,
 div {
     background-color: $dark010;
     color: $dark150;
+}
+a {
+    color: $light_blue;
 }
 h1,
 h2,
@@ -193,6 +204,11 @@ h6,
 span {
     background-color: $dark020;
     color: $dark150;
+}
+hr {
+    background-color: $dark_blue;
+    border: 0;
+    height: 5px;
 }
 input,
 textarea {
