@@ -48,32 +48,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .danger {
-        border: 1px solid red;
-        background-color: orange;
-    }
-    h4 {
-        background-color: rgb(186, 206, 248);
-        margin: 0;
-    }
-    .stock {
-        border-radius: 3px;
-        border: 1px solid rgb(140, 202, 243);
-        margin: 0.5em;
-        padding: 0.1em;
-        width: 25%;
-    }
-    .body {
-        display: flex;
-        justify-content: space-between;
-        padding: 3px;
-        input {
-            max-width: 5em;
-        }
-        button {
-            &:disabled {
-                color: #ccc;
-            }
-        }
-    }
+
 </style>

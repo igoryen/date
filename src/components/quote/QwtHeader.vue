@@ -13,11 +13,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .qwt-header {
-        background-color: #efefef;
-        padding: 3px;
-    }
-    .grow {
-        background-color:aquamarine;
-    }
+
 </style>

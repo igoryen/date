@@ -29,15 +29,5 @@ export default {
 </script>
 
 <style lang="scss">
-.nw-a {
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1em;
-        textarea {
-            max-width: 30%;
-        }
-    }
-}
+
 </style>

@@ -35,8 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ex-fn {
-    background-color: lemonchiffon;
-}
+
 
 </style>

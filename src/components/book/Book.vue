@@ -57,25 +57,5 @@
 </script>
 
 <style lang="scss">
-    .component {
-        border: 1px solid #333;
-        border-radius: 3px;
-    }
-    .book {
-        background-color: lightblue;
-        padding: 1em;
-    }
-    .flare {
-        animation: flare 1s ease-out;
-    }
-    @keyframes flare {
-        0% {
-            background-color: yellow;
-            color: red;
-        }
-        100% {
-            background-color: transparent;
-            color: #000;
-        }
-    }
+    
 </style>

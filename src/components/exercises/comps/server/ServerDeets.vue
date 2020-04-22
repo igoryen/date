@@ -32,8 +32,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .comps-server-deets {
-        background-color: antiquewhite;
-        text-align: left;
-    }
+
 </style>

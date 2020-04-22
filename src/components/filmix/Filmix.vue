@@ -38,7 +38,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .filmix {
-    background-color: lightblue;
+    background-color: #333333;
     margin: 1em;
     border: 1px solid;
     ul {

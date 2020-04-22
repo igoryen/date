@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .comps-header {
-        background-color: aqua;
-    }
+
 </style>

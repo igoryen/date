@@ -18,10 +18,5 @@ export default {
 </script>
 
 <style>
-    .answer {
-        background-color: lightgreen;
-        margin: auto;
-        max-width: 200px;
-        padding: 1em;
-    }
+
 </style>

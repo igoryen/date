@@ -59,23 +59,5 @@
     }
 </script>
 <style lang="scss" scoped>
-    .st {
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: space-between;
-
-        a {
-            margin: 3px 0.5em;
-        }
-
-    }
-    #nav {
-        padding: 1em;
-    }
-    .header {
-        background-color: antiquewhite;
-        a {
-            font-size: 10px;
-        }
-    }
+    
 </style>

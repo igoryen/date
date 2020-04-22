@@ -17,11 +17,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .single-server {
-        background-color: antiquewhite;
-        cursor: pointer;
-        &:hover {
-            background-color: yellow;
-        }
-    }
+
 </style>

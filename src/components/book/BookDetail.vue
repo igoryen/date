@@ -52,16 +52,5 @@
 </script>
 
 <style lang="scss" scoped>
-    .deet {
-        background-color: lightcoral;
-        margin: 1em;
-        padding: 1em;
-    }
-    .reset-buttons {
-        display: flex;
-        flex-direction: column;
-        button {
-            margin-bottom: 3px;
-        }
-    }
+
 </style>

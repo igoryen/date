@@ -19,22 +19,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.q-a {
-    margin: 0.1em;
-    width: 30%;
-}
-.panel-body {
-    font-family: "Arizonia", cursive;
-    font-size: 24px;
-    color: #6e6e6e;
 
-    border: 1px solid #ccc;
-}
-.qwt {
-    background-color: #ffffff;
-    cursor: pointer;
-    &:hover {
-        background-color: #ffe2e2;
-    }
-}
 </style>

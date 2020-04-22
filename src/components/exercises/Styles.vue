@@ -62,54 +62,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .progress-bar {
-        width: 200px;
-        height: 20px;
-        background-color: #f2f2f2;
-        border: 1px solid #333;
-    }
-    //------
-    .visible {
-        width: 100px;
-        height: 10px;
-        background-color: #f2f2f2;
-    }
-    //----
-    .blue {
-        background-color: blue;
-    }
-    .float {
-        float: right;
-    }
-    .user-class {
-
-    }
-    .text-color {
-        color: yellow;
-    }
-    //----
-    .styles {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        span, input {
-            margin: 3px;
-        }
-        hr {
-            width: 100%;
-        }
-    }
-    .hlt {
-        background-color: red;
-        width: 40px;
-    }
-    .shr {
-        background-color: #ccc;
-        width: 10px !important;
-    }
-    #effect {
-        width: 30px;
-        height: 10px;
-        border: 1px solid black;
-    }
+    
 </style>

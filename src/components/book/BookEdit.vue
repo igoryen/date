@@ -23,9 +23,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .edit {
-        background-color: lightgreen;
-        margin: 1em;
-        padding: 1em;
-    }
+
 </style>

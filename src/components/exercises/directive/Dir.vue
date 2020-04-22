@@ -39,10 +39,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.aa {
-    width: 100px;
-    height: 100px;
-    background-color: #ccc;
-}
+
 
 </style>

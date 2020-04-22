@@ -4,10 +4,10 @@
         <div>
             <h2>Custom directives</h2>
             <div class="dir-examples">
-                <p v-highlight:background="'#ccc'">Color this</p>
-                <p v-highlight:background.delayed="'pink'">Colored with delay</p>
-                <p v-local-highlight:background.delayed="{mainColor:'orange'}">Local custom directive</p>
-                <p v-local-highlight:background.delayed.blink="{mainColor: '#ccffff', secondColor: '#b3ffb3', delay:500}">Local. Blink.</p>
+                <p v-highlight:background="'#222222'">Color this</p>
+                <p v-highlight:background.delayed="'#333333'">Colored with delay</p>
+                <p v-local-highlight:background.delayed="{mainColor:'#662900'}">Local custom directive</p>
+                <p v-local-highlight:background.delayed.blink="{mainColor: '#333333', secondColor: '#666666', delay:500}">Local. Blink.</p>
             </div>
         </div>
         <div>
@@ -62,7 +62,5 @@ export default {
 </script>
 
 <style>
-.dir-examples {
-    border: 1px solid #ccc;
-}
+
 </style>

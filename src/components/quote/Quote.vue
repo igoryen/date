@@ -86,7 +86,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-   .q-info {
-       background-color: aquamarine;
-   }
+   
 </style>

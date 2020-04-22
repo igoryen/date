@@ -24,12 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-    .q-r {
-        background-color: bisque;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 1em;
-    }
+
 </style>

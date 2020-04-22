@@ -25,10 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .quote-new {
-        background-color: azure;
-        border: 1px solid #ccc;
-        max-width: 500px;
-        margin: auto;
-    }
+
 </style>

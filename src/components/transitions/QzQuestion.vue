@@ -79,21 +79,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .question {
-        background-color: antiquewhite;
-        margin: auto;
-        max-width: 200px;
-        padding: 1em;
-    }
-    .btns {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        button {
-            margin: 3% 10%;
-            width: 3em;            
-        }
-    }
+
 
 </style>

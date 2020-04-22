@@ -46,22 +46,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ex-form {
-    width: 100%;
-    .form {
-        background-color: antiquewhite;
-    }
-    form {
-        align-items: flex-start;        
-        display: flex;
-        flex-direction: column;
-        padding: 3px;
-    }
-    .data {
-        background-color: lavenderblush;
-        padding: 3px;
-        text-align: left;
-    }
-}
+
     
 </style>

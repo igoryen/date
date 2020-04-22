@@ -28,8 +28,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .stocks-box {
-        display: flex;
-        flex-wrap: wrap;
-    }
+
 </style>

@@ -20,7 +20,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .list {
-    background-color: bisque;
+    background-color: #000033;
     margin: 1em;
     border: 1px solid;
     ul {
