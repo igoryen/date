@@ -186,9 +186,11 @@ $dark_red: #440808;
 
 $light_blue: #b3e0ff;
 
+$border_type: dashed;
+$border_type2: solid;
 
-body,
-div {
+
+body {
     background-color: $dark010;
     color: $dark150;
 }
@@ -201,9 +203,10 @@ h3,
 h4,
 h5,
 h6,
-span {
-    background-color: $dark020;
+strong {
+    // background-color: $dark020;
     color: $dark150;
+    text-shadow: 1px 2px 2px $dark000;
 }
 hr {
     background-color: $dark_blue;
@@ -213,14 +216,21 @@ hr {
 input,
 textarea {
     background-color: $dark010;
-    border-color: $dark150;
+    border: 2px $border_type2 $dark030;
     color: $dark150;
 }
 button {
+    
+    // background-color: $dark030;
+    border: 1px $border_type2 $dark040;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 50%, rgba(68,68,68,1) 100%);
+    
     border-radius: 5px;
-    border: 2px solid $dark040;
-    background-color: $dark030;
     color: $dark150;
+    padding: 5px !important;
+
+
     &[type="submit"] {
         background-color: $dark020;
     }
@@ -228,7 +238,9 @@ button {
         color: $dark070;
     }
 }
-
+#app {
+    color: $dark150;
+}
 .clr-comps {
     width: 100%;
     .buttons {
@@ -258,7 +270,7 @@ button {
     span,
     input,
     button {
-        border: 1px solid $dark030;
+        // border: 1px $border_type $dark030;
         margin: 3px;
         padding: 3px;
     }
@@ -281,28 +293,28 @@ button {
 }
 .quote-author {
     background-color: $dark030;
-    border: 1px solid $dark080;
+    border: 1px $border_type $dark080;
     max-width: 500px;
     margin: auto;
 }
 //--------------------
 .danger {
-    border: 1px solid red;
+    border: 1px $border_type red;
     background-color: $dark_orange;
 }
+
+
 .stock {
+    border-radius: 3px;
+    border: 1px $border_type $dark_blue;
+    background-color: $dark040;
+    margin: 0.5em;
+    padding: 0.1em;
+    width: 25%;
     h4 {
         background-color: $dark_green;
         margin: 0;
     }
-}
-
-.stock {
-    border-radius: 3px;
-    border: 1px solid $dark_blue;
-    margin: 0.5em;
-    padding: 0.1em;
-    width: 25%;
 }
 .body {
     display: flex;
@@ -319,7 +331,7 @@ button {
 }
 // BOOK ---------------
 .component {
-    border: 1px solid $dark030;
+    border: 1px $border_type $dark030;
     border-radius: 3px;
 }
 .book {
@@ -360,26 +372,26 @@ button {
 }
 // Directives.vue
 .dir-examples {
-    border: 1px solid $dark120;
+    border: 1px $border_type $dark120;
 }
 // comps/colored/Blue
 .comp-blue {
     background-color: $dark_blue;
-    border: 1px solid blue;
+    border: 1px $border_type blue;
     margin: 20px auto;
     padding: 30px;
     text-align: center;
 }
 .comp-green {
     background-color: $dark_green;
-    border: 1px solid green;
+    border: 1px $border_type green;
     margin: 20px auto;
     padding: 30px;
     text-align: center;
 }
 .comp-red {
     background-color: $dark_red;
-    border: 1px solid red;
+    border: 1px $border_type red;
     margin: 20px auto;
     padding: 30px;
     text-align: center;
@@ -394,8 +406,9 @@ button {
     }
 }
 .comps-server-deets {
-    background-color: $dark010;
+    background-color: $dark040;
     text-align: left;
+    border: 1px $border_type $dark010;
 }
 .comps-server {
     background-color: $dark010;
@@ -452,7 +465,7 @@ form {
     width: 200px;
     height: 20px;
     background-color: $dark040;
-    border: 1px solid $dark030;
+    border: 1px $border_type $dark030;
 }
 //------
 .visible {
@@ -496,11 +509,11 @@ form {
 #effect {
     width: 30px;
     height: 10px;
-    border: 1px solid black;
+    border: 1px $border_type black;
 }
 // Stock
 .danger {
-    border: 1px solid red;
+    border: 1px $border_type red;
     background-color: $dark_orange;
 }
 h4 {
@@ -509,7 +522,7 @@ h4 {
 }
 .stock {
     border-radius: 3px;
-    border: 1px solid $dark_green;
+    border: 1px $border_type $dark_green;
     margin: 0.5em;
     padding: 0.1em;
     width: 25%;
@@ -543,7 +556,7 @@ h4 {
 //--
 .aaa {
     background-color: $dark030;
-    border: 1px solid $dark060;
+    border: 1px $border_type $dark060;
     box-shadow: 1px 1px 1px $dark010;
     margin: 30px auto;
     max-width: 300px;
@@ -568,7 +581,7 @@ h4 {
 // Quote New
 .quote-new {
     background-color: $dark030;
-    border: 1px solid $dark120;
+    border: 1px $border_type $dark120;
     max-width: 500px;
     margin: auto;
 }
@@ -582,7 +595,7 @@ h4 {
     font-size: 24px;
     color: $dark150;
 
-    border: 1px solid $dark120;
+    border: 1px $border_type $dark120;
 }
 .qwt {
     background-color: $dark030;
@@ -612,7 +625,7 @@ h4 {
 }
 // Quiz.vue
 .quiz {
-    border: 1px solid green;
+    border: 1px $border_type green;
     background-color: $dark_green;
 }
 // QzAnswer.vue
@@ -646,6 +659,14 @@ h4 {
     margin: 10px;
 }
 // Transitions.vue
+.trans {
+    .alpha {
+        background-color: $dark030;
+        border: 1px $border_type $dark070;
+        margin: 3px;
+        padding: 3px;
+    }
+}
 .flip {
     &-enter {
         &-active {
@@ -781,10 +802,10 @@ h4 {
 }
 ul {
     &.list-group {
-        border: 1px solid $dark040;
+        border: 1px $border_type $dark040;
         padding: 0;
         li {
-            border: 1px solid $dark030;
+            border: 1px $border_type $dark030;
             border-radius: 3px;
             list-style: none;
             margin: 2px;
@@ -806,14 +827,15 @@ ul {
 }
 #nav {
     padding: 1em;
-    background-color: $dark030;
+    background-color: $dark000;
     span {
-        background-color: $dark030;
+        // background-color: $dark030;
+        color: $light_blue;
     }
 }
 .header {
     background-color: $dark030;
-    color: red;
+    color: $dark040;
     a {
         font-size: 10px;
     }
@@ -822,7 +844,7 @@ ul {
 .list {
     background-color: $dark_blue;
     margin: 1em;
-    border: 1px solid;
+    border: 1px $border_type;
     ul {
         padding: 0;
         li {
@@ -834,7 +856,7 @@ ul {
 .filmix {
     background-color: $dark_red;
     margin: 1em;
-    border: 1px solid;
+    border: 1px $border_type;
     ul {
         padding: 0;
         li {

@@ -13,8 +13,8 @@
         <br><br>
         <hr>
         <transition :name="alertAnimation" mode="out-in">
-            <div key="alpha" v-if="show">Alpha</div>
-            <div key="bravo" v-else>Bravo</div>
+            <div class="alpha" key="alpha" v-if="show">Alpha</div>
+            <div class="alpha" key="bravo" v-else>Bravo</div>
         </transition>
         <hr>
         <select name="" id="" v-model="alertAnimation">
