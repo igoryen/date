@@ -70,6 +70,8 @@
             <app-ax1></app-ax1>
             <hr>
             <app-env-var></app-env-var>
+            <hr>
+            <app-ilu></app-ilu>
         </div>
     </div>
 </template>
@@ -98,6 +100,7 @@ import Fm from "@/components/exercises/filmix/Fm.vue";
 import ax1 from "@/components/axios/Ex1.vue";
 
 import ev from "@/components/envvar/EnvVar.vue";
+import InputLiveUpdate from "@/components/exercises/InputLiveUpdate.vue";
 
 export default {
     name: "Home",
@@ -122,7 +125,8 @@ export default {
         //--
         appAx1: ax1,
 
-        appEnvVar: ev
+        appEnvVar: ev,
+        appIlu: InputLiveUpdate
     },
     data() {
         return {
@@ -189,6 +193,11 @@ $light_blue: #b3e0ff;
 $border_type: dashed;
 $border_type2: solid;
 
+@mixin span_styled {
+    background-color: #222222;
+    border: 1px $border_type $dark040;
+    padding: 3px;
+}
 
 body {
     background-color: $dark010;
@@ -240,6 +249,12 @@ button {
 }
 #app {
     color: $dark150;
+}
+
+.input-live-update {
+    span {
+        @include span_styled;
+    }
 }
 .clr-comps {
     width: 100%;
