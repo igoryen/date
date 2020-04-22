@@ -2,12 +2,13 @@
     <div class="home">
         <pre>Hello from Home.vue</pre>
         <HelloWorld msg="Welcome to Your Vue.js App" />
-        <hr>
+        <hr />
         <section class="panel-set">
             <div class="buttons">
                 <button @click="pckPnl = 'appPnlA'">PanelA.vue</button>
                 <button @click="pckPnl = 'appPnlB'">PanelB.vue</button>
                 <button @click="pckPnl = 'appPnlC'">PanelC.vue</button>
+                <button @click="pckPnl = 'appPnlD'">PanelD.vue</button>
                 <button @click="pckPnl = 'appStyles'">Styles.vue</button>
                 <button @click="pckPnl = 'appCondlist'">CondList.vue</button>
             </div>
@@ -15,24 +16,16 @@
                 <component :is="pckPnl"></component>
             </div>
         </section>
-        <hr>
+        <hr />
         <div class="spans">
+            <hr />
 
             <hr />
-            
+
             <hr />
-            
+
             <hr />
-            
-            <hr />
-            <div class="ex-comps">
-                <app-serv-header></app-serv-header>
-                <div class="b">
-                    <app-servers></app-servers>
-                    <app-serv-deets></app-serv-deets>
-                </div>
-                <app-serv-footer></app-serv-footer>
-            </div>
+
             <hr />
             <div class="clr-comps">
                 <div class="buttons">
@@ -63,9 +56,9 @@
             <app-fm></app-fm>
             <hr />
             <app-ax1></app-ax1>
-            <hr>
+            <hr />
             <app-env-var></app-env-var>
-            <hr>
+            <hr />
             <app-ilu></app-ilu>
         </div>
     </div>
@@ -77,10 +70,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import StylesEx from "@/components/exercises/Styles.vue";
 import condlist from "@/components/exercises/CondList.vue";
 //---
-import ServerFooter from "@/components/exercises/comps/shared/Footer.vue";
-import ServerHeader from "@/components/exercises/comps/shared/Header.vue";
-import ServerDeets from "@/components/exercises/comps/server/ServerDeets.vue";
-import Servers from "@/components/exercises/comps/server/Servers.vue";
+
 //---
 import Green from "@/components/exercises/comps/colored/Green.vue";
 import Blue from "@/components/exercises/comps/colored/Blue.vue";
@@ -99,6 +89,7 @@ import InputLiveUpdate from "@/components/exercises/InputLiveUpdate.vue";
 import PanelA from "@/components/exercises/PanelA.vue";
 import PanelB from "@/components/exercises/PanelB.vue";
 import PanelC from "@/components/exercises/PanelC.vue";
+import PanelD from "@/components/exercises/PanelD.vue";
 
 export default {
     name: "Home",
@@ -106,10 +97,7 @@ export default {
         HelloWorld,
         appStyles: StylesEx,
         appCondlist: condlist,
-        appServFooter: ServerFooter,
-        appServHeader: ServerHeader,
-        appServDeets: ServerDeets,
-        appServers: Servers,
+
         //----
         appRed: Red,
         appBlue: Blue,
@@ -127,16 +115,15 @@ export default {
         appIlu: InputLiveUpdate,
         appPnlA: PanelA,
         appPnlB: PanelB,
-        appPnlC: PanelC
+        appPnlC: PanelC,
+        appPnlD: PanelD
     },
     data() {
         return {
             selComp: "appBlue", // #1
             pckPnl: "appPnlA"
         };
-    },
-    
-    
+    }
 };
 /**
  * 1. selComp = selected component
@@ -201,16 +188,19 @@ textarea {
     color: $dark150;
 }
 button {
-    
     // background-color: $dark030;
     border: 1px $border_type2 $dark040;
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 50%, rgba(68,68,68,1) 100%);
-    
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(34, 34, 34, 1) 50%,
+        rgba(68, 68, 68, 1) 100%
+    );
+
     border-radius: 5px;
     color: $dark150;
     padding: 5px !important;
-
 
     &[type="submit"] {
         background-color: $dark020;
@@ -233,10 +223,12 @@ button {
         flex-direction: column;
         @include box_styled();
     }
+    .panel {
+        width: 100%;
+    }
     .buttons {
         display: flex;
         flex-direction: column;
-
     }
     .output {
         @include box_styled();
@@ -259,15 +251,6 @@ button {
     }
 }
 
-.ex-comps {
-    background-color: $dark030;
-    padding: 0.5em;
-    width: 100%;
-    .b {
-        display: grid;
-        grid-template-columns: 40% 40%;
-    }
-}
 .spans,
 .parent {
     display: flex;
@@ -309,7 +292,6 @@ button {
     border: 1px $border_type red;
     background-color: $dark_orange;
 }
-
 
 .stock {
     border-radius: 3px;
@@ -405,13 +387,7 @@ button {
 }
 
 //---
-.single-server {
-    background-color: $dark010;
-    cursor: pointer;
-    &:hover {
-        background-color: $dark020;
-    }
-}
+
 .comps-server-deets {
     background-color: $dark040;
     text-align: left;
@@ -430,12 +406,37 @@ button {
 .bb {
     background-color: $dark020;
 }
-.comps-footer {
-    background-color: $dark010;
+
+.ex-comps {
+    background-color: $dark030;
+    padding: 0.5em;
+    width: 100%;
+    .comps-header {
+        background-color: $dark_green;
+    }
+    .b {
+        display: flex;
+        flex-direction: row;
+    }
+    .comps-footer {
+        background-color: $dark010;
+    }
+    .single-server {
+        // background-color: $dark010;
+        cursor: pointer;
+        &:hover {
+            background-color: $dark010;
+        }
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        color: $light_blue;
+    }
 }
-.comps-header {
-    background-color: $dark_green;
-}
+
 // directive
 .aa {
     background-color: $dark030;
