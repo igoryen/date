@@ -5,10 +5,11 @@
         <hr>
         <section class="panel-set">
             <div class="buttons">
-                <button @click="pckPnl = 'appPnlA'">A</button>
-                <button @click="pckPnl = 'appPnlB'">B</button>
-                <button @click="pckPnl = 'appPnlC'">C</button>
-                <button @click="pckPnl = 'appStyles'">Styles</button>
+                <button @click="pckPnl = 'appPnlA'">PanelA.vue</button>
+                <button @click="pckPnl = 'appPnlB'">PanelB.vue</button>
+                <button @click="pckPnl = 'appPnlC'">PanelC.vue</button>
+                <button @click="pckPnl = 'appStyles'">Styles.vue</button>
+                <button @click="pckPnl = 'appCondlist'">CondList.vue</button>
             </div>
             <div class="panel">
                 <component :is="pckPnl"></component>
@@ -22,7 +23,7 @@
             <hr />
             
             <hr />
-            <app-condlist></app-condlist>
+            
             <hr />
             <div class="ex-comps">
                 <app-serv-header></app-serv-header>
